@@ -1,5 +1,6 @@
 package com.vertexinc.returns.test.cloudui.util.interfaces;
 
+import com.vertexinc.returns.test.cloudui.resources.Environment;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Test;
@@ -9,6 +10,8 @@ import org.openqa.selenium.WebElement;
 
 
 public interface TestInterface {
+
+    Environment getEnvironment();
     WebDriver getBrowser();
 
     default void clickBackButton() {

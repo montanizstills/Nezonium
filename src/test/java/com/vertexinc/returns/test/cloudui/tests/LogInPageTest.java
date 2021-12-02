@@ -2,18 +2,17 @@ package com.vertexinc.returns.test.cloudui.tests;
 
 import com.vertexinc.returns.test.cloudui.resources.Environment;
 import com.vertexinc.returns.test.cloudui.resources.page.LogInPage;
-import com.vertexinc.returns.test.cloudui.util.interfaces.LogInPageInterface;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LogInPageTest extends LogInPage {
 
+
     private WebDriver browser;
-    private Environment environment;
+    private Environment environment = Environment.DEV;
 
 
     @Test
