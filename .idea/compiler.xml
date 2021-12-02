@@ -9,5 +9,6 @@
         <module name="feat-abstraction" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
