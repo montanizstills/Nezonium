@@ -1,4 +1,4 @@
-package com.vertexinc.returns.test.cloudui.resources;
+package com.vertexinc.returns.test.cloudui.util.resources;
 
 public enum Environment {
 

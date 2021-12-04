@@ -1,22 +1,23 @@
 package com.vertexinc.returns.test.cloudui.tests;
 
-import com.vertexinc.returns.test.cloudui.resources.Environment;
-import com.vertexinc.returns.test.cloudui.util.interfaces.TestInterface;
+import com.vertexinc.returns.test.cloudui.util.resources.Environment;
+import com.vertexinc.returns.test.cloudui.util.resources.page.CloudLogInPageInterface;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class UseCase implements TestInterface {
+
+//This use case uses the Cloud login page as a basis. To change the page skeleton, please implement a new interface.
+//This framework aims to reduce future testing labor as tests (class UseCass) implement behaviours of pre-defined pages.
+//The Test Suite is effective when calling upon the 'actions' of pre-defined web/site pages. Bridges gap between engineers.
+public class UseCase implements CloudLogInPageInterface {
 
 //    Test Framework can open webpage.
-//    Demo webpage will be Vertex Corporate home page.
 
+//    Demo webpage will be Vertex Corporate home page.
     private final Environment environment = Environment.VERTEX_HOME_PAGE;
     private WebDriver browser;
 
@@ -34,12 +35,12 @@ public class UseCase implements TestInterface {
         this.browser = new ChromeDriver();
 //        browser = Browsers.IE.getInstance();
 
-//        logger.atDebug().addKeyValue("", line_to_exec)
+//        logger.atDebug().addKeyValue("", line_to_exec){if obj => object.toString()}
 //        logger.atDebug().addKeyValue("", browser = new InternetExplorerDriver());
 //        OR
 //        logger.atDebug().addKeyValue("", browser = Browsers.IE.getInstance());
 
-        browser.navigate().to("https://www.vertexinc.com");
+        browser.navigate().to(getEnvironment().getURL());
         String actual = browser.getCurrentUrl();
 
         //Then:
@@ -50,7 +51,6 @@ public class UseCase implements TestInterface {
 
     }//End Test Case
 
-    @Override
     public Environment getEnvironment() {
         return this.environment;
     }
@@ -63,7 +63,7 @@ public class UseCase implements TestInterface {
     @Override
     @After //remove @After to keep page open after testing. Please add @After annotation after testing.
     public void tearDown() {
-        TestInterface.super.tearDown();
+        CloudLogInPageInterface.super.tearDown();
     }
 
 }//End MyTestClass

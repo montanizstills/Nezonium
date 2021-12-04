@@ -1,26 +1,23 @@
 package com.vertexinc.returns.test.cloudui.tests;
 
-import com.vertexinc.returns.test.cloudui.resources.Environment;
-import com.vertexinc.returns.test.cloudui.resources.page.LogInPage;
+import com.vertexinc.returns.test.cloudui.util.resources.Environment;
+import com.vertexinc.returns.test.cloudui.util.resources.page.CloudLogInPageInterface;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LogInPageTest extends LogInPage {
-
+public class CloudLogInPageTest implements CloudLogInPageInterface {
 
     private WebDriver browser;
-    private Environment environment = Environment.DEV;
+    private final Environment environment = Environment.QA;
 
 
     @Test
     public void Test_EnterUsernameField() {
         //Given:
         String expectedUsername = "vertuser2@vertex.local";
-        this.environment = Environment.QA;
-
 
         //When:
         WebDriverManager.chromedriver().setup();
@@ -32,7 +29,6 @@ public class LogInPageTest extends LogInPage {
         String actualUsername = getBrowser().findElement(usernameField).getText();
         Assert.assertEquals(expectedUsername, actualUsername);
 
-
         //clean up
         tearDown();
     }
@@ -41,7 +37,6 @@ public class LogInPageTest extends LogInPage {
     public void Test_EnterPasswordField() {
         //Given:
         String expectedPassword = "u$1&pBFlyf7R";
-        this.environment = Environment.QA;
 
         //When:
         WebDriverManager.chromedriver().setup();
@@ -62,7 +57,7 @@ public class LogInPageTest extends LogInPage {
         //Given:
         String expectedUsername = "vertuser2@vertex.local";
         String expectedPassword = "u$1&pBFlyf7R";
-        this.environment = Environment.QA;
+
 
         //When:
         WebDriverManager.chromedriver().setup();
@@ -79,4 +74,9 @@ public class LogInPageTest extends LogInPage {
         tearDown();
     }
 
+
+    @Override
+    public WebDriver getBrowser() {
+        return this.browser;
+    }
 }
