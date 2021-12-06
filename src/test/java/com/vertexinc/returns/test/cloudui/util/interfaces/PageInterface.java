@@ -24,9 +24,21 @@ public interface PageInterface {
         getBrowser().findElement(webElement).click();
     }
 
-//    @After annotation through inheritance not working to expectation
-//    explicitly calling as workaround.
+    /*
+        @After annotation through inheritance not working to expectation
+    //    default void tearDown()
+    //    explicitly calling as workaround.
+        */
     default void tearDown() {
+//        Wait a few seconds to see results in-action or take screenshot
+//        try {
+//            wait(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+//        takeScreenShot();
+
         if (getBrowser() != null)
             getBrowser().quit();
     }
