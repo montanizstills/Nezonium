@@ -3,10 +3,13 @@ package com.vertexinc.returns.test.cloudui.util.interfaces;
 import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.FluentWait;
 
 public interface PageInterface {
 
-    WebDriver getBrowser();
+    FluentWait<WebDriver> getWaitDriver();
+
+     WebDriver getBrowser();
 
     default void clickBackButton() {
         getBrowser().navigate().back();

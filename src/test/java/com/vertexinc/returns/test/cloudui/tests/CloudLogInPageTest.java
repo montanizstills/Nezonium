@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.FluentWait;
 
 public class CloudLogInPageTest implements CloudLogInPageInterface, TestInterface {
 
@@ -102,6 +103,11 @@ public class CloudLogInPageTest implements CloudLogInPageInterface, TestInterfac
     @Override
     public Environment getEnvironment() {
         return this.environment;
+    }
+
+    @Override
+    public FluentWait<WebDriver> getWaitDriver() {
+        return new FluentWait<>(getBrowser());
     }
 
     @Override

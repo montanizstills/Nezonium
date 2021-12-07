@@ -11,11 +11,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.FluentWait;
 
 public class CloudHomePageTest implements CloudHomePageInterface, TestInterface {
 
     private WebDriver browser;
     private final Environment environment = Environment.DEV;
+
 
     @Test
     public void Test_Click_Rates_and_Jurisdictions_Button() {
@@ -79,12 +81,17 @@ public class CloudHomePageTest implements CloudHomePageInterface, TestInterface 
 
 
     @Override
-    public WebDriver getBrowser() {
-        return this.browser;
+     public WebDriver getBrowser() {
+        return browser;
     }
 
     @Override
     public Environment getEnvironment() {
         return this.environment;
+    }
+
+    @Override
+    public FluentWait<WebDriver> getWaitDriver() {
+        return new FluentWait<>(getBrowser());
     }
 }
