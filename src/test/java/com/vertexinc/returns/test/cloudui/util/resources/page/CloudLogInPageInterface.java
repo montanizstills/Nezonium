@@ -8,6 +8,7 @@ public interface CloudLogInPageInterface extends PageInterface {
     By usernameField = By.id("username");
     By passwordField = By.id("password");
     By loginButton = By.tagName("button");
+    By forgotPasswordButton = By.cssSelector("a[href='/forgot-password']");
 
     default void fillUsernameField(String keys) {
         getBrowser().findElement(usernameField).sendKeys(keys);

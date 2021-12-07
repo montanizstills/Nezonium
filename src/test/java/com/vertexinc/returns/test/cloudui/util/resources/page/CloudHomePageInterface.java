@@ -1,6 +1,7 @@
 package com.vertexinc.returns.test.cloudui.util.resources.page;
 
 import com.vertexinc.returns.test.cloudui.util.interfaces.PageInterface;
+import com.vertexinc.returns.test.cloudui.util.interfaces.TestInterface;
 import org.openqa.selenium.By;
 
 public interface CloudHomePageInterface extends PageInterface {
@@ -31,7 +32,7 @@ public interface CloudHomePageInterface extends PageInterface {
     By inlineHelpEditorButton = By.cssSelector("a[href='/Admin/InlineHelp']");
     By updateNotificationButton = By.cssSelector("a[href='/Admin/Notifier']");
     By manageOSeriesConfigButton = By.cssSelector("a[href='/Admin/ManageOSeries']");
-    By manageReturnsConfigButtong = By.cssSelector("a[href='/Admin/ReturnFields']");
+    By manageReturnsConfigButton = By.cssSelector("a[href='/Admin/ReturnFields']");
     By manageTaxCalendarButton = By.cssSelector("a[href='/Admin/TaxCalendar']");
     By errorMonitorButton = By.cssSelector("a[href='/Admin/ManageQueueWorkflow']");
     By systemConfigurationButton = By.cssSelector("a[href='/Admin/SystemConfiguration']");

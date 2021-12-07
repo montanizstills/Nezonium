@@ -8,6 +8,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 
 //This use case uses the Cloud login page as a basis. To change the page skeleton, please implement a new interface.
@@ -31,8 +33,8 @@ public class UseCase implements CloudLogInPageInterface {
 
 
         //When:
-        WebDriverManager.chromedriver().setup();
-        this.browser = new ChromeDriver();
+        WebDriverManager.iedriver().setup();
+        this.browser = new InternetExplorerDriver();
 //        browser = Browsers.IE.getInstance();
 
 //        logger.atDebug().addKeyValue("", line_to_exec){if obj => object.toString()}

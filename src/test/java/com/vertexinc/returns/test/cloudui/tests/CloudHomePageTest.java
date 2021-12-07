@@ -53,6 +53,7 @@ public class CloudHomePageTest implements CloudHomePageInterface, TestInterface 
         //When:
         WebDriverManager.chromedriver().setup();
         this.browser = new ChromeDriver();
+
         getBrowser().navigate().to(this.environment.getURL());
 
         //1.Login
@@ -65,7 +66,7 @@ public class CloudHomePageTest implements CloudHomePageInterface, TestInterface 
         //Test
         Actions actions = new Actions(getBrowser());
         actions.moveToElement(getBrowser().findElement(CloudHomePageInterface.logsButton)).perform();
-//        browserWait(5000); //if you want to see the LogButton pop up during testing uncomment.
+        browserWait(5000); //if you want to see the LogButton pop up during testing uncomment.
         getBrowser().findElement(CloudHomePageInterface.logsBigCommerceLogs).click();
 
 
