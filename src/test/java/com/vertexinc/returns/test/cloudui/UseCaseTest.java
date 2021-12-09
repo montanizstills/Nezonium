@@ -2,11 +2,17 @@ package com.vertexinc.returns.test.cloudui;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;
+import com.vertexinc.returns.test.cloudui.util.Page;
+import com.vertexinc.returns.test.cloudui.util.pageinterface.PageInterface;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
 
 
 /**
@@ -18,7 +24,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
  * This architecture aims to alleviate `mistakes` in testing, by enforcing strict type requirements. Such as <Type extends SuperClass>
  **/
 
-public class UseCase extends TestImpl {
+public class UseCaseTest implements PageInterface {
 
 //    Test that Framework can open webpage.
 //    The demo webpage will be Vertex Corporate home page.
@@ -29,28 +35,24 @@ public class UseCase extends TestImpl {
 
     @Test
     public void Test_LoadCorporateWebPage() {
+        WebDriverManager.chromedriver().setup();
+        this.browser = new ChromeDriver(); //OLD
+        //browser = Browsers.CHROME.getInstance(); //NEW
+        this.driverHandler = new DriverHandler(this.browser);
 
         //Given:
         String expectedURL = this.environment.getURL();
-        WebDriverManager.iedriver().setup();
-        this.browser = new InternetExplorerDriver(); //OLD
-        //browser = Browsers.IE.getInstance(); //NEW
-        this.driverHandler = new DriverHandler(this.browser);
-
+        Page page = new Page(getDriverHandler());
         //When:
-        getDriverHandler().navigateTo(getEnvironment().getURL());
-
+        page.navigateTo(getEnvironment());
         //Then:
-        String actualURL = getDriverHandler().getDriver().getCurrentUrl();
+        String actualURL = page.getCurrentURL();
         Assert.assertEquals(expectedURL, actualURL);
 
         //clean up
         getDriverHandler().tearDown();
-
     }//End Test Case
 
-
-    @Override
     public Environment getEnvironment() {
         return this.environment;
     }

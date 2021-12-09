@@ -20,24 +20,21 @@ public class CloudHomePageTest implements CloudHomePageInterface {
 
     @Test
     public void Test_Click_Rates_and_Jurisdictions_Button() {
-        //Given:
-        String expectedUsername = "vertuser2@vertex.local";
-        String expectedPassword = "u$1&pBFlyf7R";
         WebDriverManager.chromedriver().setup();
         this.browser = new ChromeDriver();
         this.driverHandler = new DriverHandler(this.browser);
 
-
+        //Given:
+        String expectedUsername = "vertuser2@vertex.local";
+        String expectedPassword = "u$1&pBFlyf7R";
         //When:
         //Start Test by logging into cloud.
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
         cloudLoginPage.navigateTo(environment);
-
         //1.Login
         cloudLoginPage.login(expectedUsername, expectedPassword);
         CloudHomePage cloudHomePage = new CloudHomePage(getDriverHandler());
         cloudHomePage.clickRatesJurisdictionButton();
-
         //Then:
         Assert.assertEquals("https://devportal.vertexsmb.com/RateLookup", getDriverHandler().getCurrentUrl());
 
@@ -47,25 +44,21 @@ public class CloudHomePageTest implements CloudHomePageInterface {
 
     @Test
     public synchronized void Test_Click_ECW_Logs_Button() {
+        WebDriverManager.chromedriver().setup();
+        this.browser = new ChromeDriver();
+        this.driverHandler = new DriverHandler(this.browser);
+
         //Given:
         String expectedUsername = "vertuser2@vertex.local";
         String expectedPassword = "u$1&pBFlyf7R";
-
-
-        //When:
-        WebDriverManager.chromedriver().setup();
-        this.browser = new ChromeDriver();
-        this.driverHandler=new DriverHandler(this.browser);
-
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
+        //When:
+        cloudLoginPage.navigateTo(environment);
         cloudLoginPage.login(expectedUsername, expectedPassword);
         CloudHomePage cloudHomePage = new CloudHomePage(getDriverHandler());
-
-        //Test
         cloudHomePage.clickECWLogsButton();
-
         //Then:
-        Assert.assertEquals("https://devportal.vertexsmb.com/Admin/BigCommerceLogs", getDriverHandler().getCurrentUrl());
+        Assert.assertEquals("https://devportal.vertexsmb.com/Admin/EcWizardLogs", getDriverHandler().getCurrentUrl());
 
         //clean up
         getDriverHandler().tearDown();

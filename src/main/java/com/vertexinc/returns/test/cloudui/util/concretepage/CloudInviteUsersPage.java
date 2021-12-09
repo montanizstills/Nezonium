@@ -18,4 +18,12 @@ public class CloudInviteUsersPage extends Page implements CloudInviteUsersPageIn
     public void clickInviteUsersButton() {
         getDriverHandler().click(getInviteUsersButton());
     }
+
+    public void enterOraclePartyNumber(String oraclePartyNumber) {
+        getDriverHandler().sendKeys(getOraclePartyNumberField(),oraclePartyNumber);
+    }
+
+    public String getOraclePartyNumber() {
+        return getDriverHandler().getText(getOraclePartyNumberField());
+    }
 }

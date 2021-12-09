@@ -20,6 +20,10 @@ public class CloudLoginPage extends Page implements CloudLogInPageInterface {
         return getDriverHandler().getElement(getUsernameField()).getText();
     }
 
+    public String getPassword(){
+        return getDriverHandler().getElement(getPasswordField()).getText();
+    }
+
     public void login(String usernameInput, String passwordInput) {
         getDriverHandler().sendKeys(getUsernameField(), usernameInput);
         getDriverHandler().sendKeys(getPasswordField(), passwordInput);
@@ -27,4 +31,11 @@ public class CloudLoginPage extends Page implements CloudLogInPageInterface {
 //       return new CloudHomePage(getDriverHandler());
     }
 
+    public void enterPassword(String expectedPassword) {
+        getDriverHandler().sendKeys(getPasswordField(),expectedPassword);
+    }
+
+    public void clickForgotPasswordButton() {
+        getDriverHandler().click(getForgotPasswordButton());
+    }
 }
