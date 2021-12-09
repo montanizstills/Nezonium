@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CloudHomePageTest extends TestImpl implements CloudHomePageInterface {
+public class CloudHomePageTest implements CloudHomePageInterface {
 
     private WebDriver browser;
     private final Environment environment = Environment.DEV;
@@ -23,14 +23,15 @@ public class CloudHomePageTest extends TestImpl implements CloudHomePageInterfac
         //Given:
         String expectedUsername = "vertuser2@vertex.local";
         String expectedPassword = "u$1&pBFlyf7R";
-
-        //Start Test by logging into cloud.
-        CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
-
-        //When:
         WebDriverManager.chromedriver().setup();
         this.browser = new ChromeDriver();
-        getDriverHandler().navigateTo(environment.getURL());
+        this.driverHandler = new DriverHandler(this.browser);
+
+
+        //When:
+        //Start Test by logging into cloud.
+        CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
+        cloudLoginPage.navigateTo(environment);
 
         //1.Login
         cloudLoginPage.login(expectedUsername, expectedPassword);
@@ -54,6 +55,7 @@ public class CloudHomePageTest extends TestImpl implements CloudHomePageInterfac
         //When:
         WebDriverManager.chromedriver().setup();
         this.browser = new ChromeDriver();
+        this.driverHandler=new DriverHandler(this.browser);
 
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
         cloudLoginPage.login(expectedUsername, expectedPassword);
@@ -71,8 +73,7 @@ public class CloudHomePageTest extends TestImpl implements CloudHomePageInterfac
 
 
     @Override
-    public Environment getEnvironment() {
-        return this.environment;
+    public DriverHandler getDriverHandler() {
+        return this.driverHandler;
     }
-
 }

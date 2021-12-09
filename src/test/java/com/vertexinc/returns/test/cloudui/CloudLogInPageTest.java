@@ -4,44 +4,28 @@ import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;
 import com.vertexinc.returns.test.cloudui.util.concretepage.CloudLoginPage;
 import com.vertexinc.returns.test.cloudui.util.pageinterface.CloudLogInPageInterface;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CloudLogInPageTest extends TestImpl implements
-        CloudLogInPageInterface{
+        CloudLogInPageInterface {
 
-    private final Environment environment = Environment.QA;
+    private final Environment environment = Environment.DEV;
     private DriverHandler driverHandler;
+    private WebDriver browser;
 
-    @Before
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
-        this.driverHandler = new DriverHandler(new ChromeDriver());
-    }
-
-    @Test
-    public void testEnterUserNameField() {
-        // given
-        String expectedUsername = "vertuser2@vertex.local";
-        CloudLoginPage cloudLogInPage = new CloudLoginPage(driverHandler);
-        cloudLogInPage.navigateTo(environment);
-
-
-        //When:
-        cloudLogInPage.enterUserName(expectedUsername);
-        String actualUsername = cloudLogInPage.getUserName();
-
-        // then:
-        Assert.assertEquals(expectedUsername, actualUsername);
-    }
 
     @Test
     public void Test_EnterUsernameField() {
+        WebDriverManager.chromedriver().setup();
+        this.browser = new ChromeDriver();
+        this.driverHandler = new DriverHandler(this.browser);
+
+
         //Given:
         String expectedUsername = "vertuser2@vertex.local";
         CloudLoginPage cloudLogInPage = new CloudLoginPage(driverHandler);
@@ -59,11 +43,15 @@ public class CloudLogInPageTest extends TestImpl implements
         Assert.assertEquals(expectedUsername, actualUsername);
 
         //clean up
-        //getDriverHandler().tearDown();
+        getDriverHandler().tearDown();
     }
 
     @Test
     public void Test_EnterPasswordField() {
+        WebDriverManager.chromedriver().setup();
+        this.browser = new ChromeDriver();
+        this.driverHandler = new DriverHandler(this.browser);
+
         //Given:
         String expectedPassword = "u$1&pBFlyf7R";
 
@@ -75,12 +63,16 @@ public class CloudLogInPageTest extends TestImpl implements
         String actualPassword = getDriverHandler().getText(getPasswordField());
         Assert.assertEquals(expectedPassword, actualPassword);
 
-        //clean up
+
         getDriverHandler().tearDown();
     }
 
     @Test
     public void Test_SuccessfulLogin() {
+        WebDriverManager.chromedriver().setup();
+        this.browser = new ChromeDriver();
+        this.driverHandler = new DriverHandler(this.browser);
+
         //Given:
         String expectedUrl = "https://devportal.vertexsmb.com/Admin/AdminDash";
 
@@ -93,15 +85,25 @@ public class CloudLogInPageTest extends TestImpl implements
         //Then:
         String currentUrl = getDriverHandler().getCurrentUrl();
         Assert.assertEquals(expectedUrl, currentUrl);
+        getDriverHandler().tearDown();
     }
 
     @Test
     public void Test_Forgot_Password_Test() {
+        WebDriverManager.chromedriver().setup();
+        this.browser = new ChromeDriver();
+        this.driverHandler = new DriverHandler(this.browser);
+
         //Given:
-        getDriverHandler().navigateTo("https://devportal.vertexsmb.com");
+        String expectedURL = "https://devauth.vertexsmb.com/forgot-password";
+        CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
+        cloudLoginPage.navigateTo(getEnvironment());
 
         //When:
         getDriverHandler().click(getForgotPasswordButton());
+
+        String actualURL = cloudLoginPage.getCurrentURL();
+        Assert.assertEquals(expectedURL,actualURL);
 
         //then
         getDriverHandler().tearDown();

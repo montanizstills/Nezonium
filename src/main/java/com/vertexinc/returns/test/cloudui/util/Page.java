@@ -1,14 +1,13 @@
 package com.vertexinc.returns.test.cloudui.util;
 
 import com.vertexinc.returns.test.cloudui.util.pageinterface.PageInterface;
-import org.openqa.selenium.WebDriver;
 
 public class Page implements PageInterface {
 
     private final DriverHandler driverHandler;
 
-    public Page(WebDriver driver) {
-        this.driverHandler = new DriverHandler(driver);
+    public Page(DriverHandler driverHandler) {
+        this.driverHandler = driverHandler;
 
     }
 

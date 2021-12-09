@@ -29,30 +29,20 @@ public class UseCase extends TestImpl {
 
     @Test
     public void Test_LoadCorporateWebPage() {
-//        Start Logger;
-//        Logger logger = LoggerFactory.getLogger("MyTest01");
 
         //Given:
-        String expected = this.environment.getURL();
-
+        String expectedURL = this.environment.getURL();
+        WebDriverManager.iedriver().setup();
+        this.browser = new InternetExplorerDriver(); //OLD
+        //browser = Browsers.IE.getInstance(); //NEW
+        this.driverHandler = new DriverHandler(this.browser);
 
         //When:
-        WebDriverManager.iedriver().setup();
-        this.browser = new InternetExplorerDriver();
-        this.driverHandler = new DriverHandler(this.browser);
-//        browser = Browsers.IE.getInstance();
-
-//        logger.atDebug().addKeyValue("", line_to_exec){if obj => object.toString()}
-//        logger.atDebug().addKeyValue("", browser = new InternetExplorerDriver());
-//        OR
-//        logger.atDebug().addKeyValue("", browser = Browsers.IE.getInstance());
-//
-
         getDriverHandler().navigateTo(getEnvironment().getURL());
-        String actual = getDriverHandler().getDriver().getCurrentUrl();
 
         //Then:
-        Assert.assertEquals(expected, actual);
+        String actualURL = getDriverHandler().getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedURL, actualURL);
 
         //clean up
         getDriverHandler().tearDown();

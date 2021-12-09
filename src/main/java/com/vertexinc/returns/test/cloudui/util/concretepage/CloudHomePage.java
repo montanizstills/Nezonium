@@ -9,7 +9,7 @@ public class CloudHomePage extends Page implements CloudHomePageInterface {
 
 
     public CloudHomePage(DriverHandler driverHandler) {
-        super(driverHandler.getDriver());
+        super(driverHandler);
 
     }
 

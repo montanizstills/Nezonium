@@ -1,14 +1,15 @@
 package com.vertexinc.returns.test.cloudui.util.pageinterface;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
-import com.vertexinc.returns.test.cloudui.util.DriverHandlerInterface;
 import com.vertexinc.returns.test.cloudui.util.Environment;
-import org.openqa.selenium.WebDriver;
 
 public interface PageInterface {
-    DriverHandler getDriverHandler();
+    DriverHandler getDriverHandler(); //to expose the driverHandler to implementing subclasses
 
-    default void navigatgeTo(Environment environment) {
+    default String getCurrentURL() {
+        return getDriverHandler().getDriver().getCurrentUrl();
+    }
+    default void navigateTo(Environment environment) {
         getDriverHandler().navigateTo(environment.getURL());
     }
 
