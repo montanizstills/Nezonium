@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class CloudInviteUsersTest implements CloudInviteUsersPageInterface{
 
     private WebDriver browser;
-    private Environment environment = Environment.DEV;
+    private Environment environment = Environment.QA;
     private DriverHandler driverHandler;
 
 
@@ -27,8 +27,8 @@ public class CloudInviteUsersTest implements CloudInviteUsersPageInterface{
 
         //Given:
         //Some user who can already log into system.
-        String expectedUsername = "vertuser2@vertex.local";
-        String expectedPassword = "u$1&pBFlyf7R";
+        String expectedUsername = environment.getUsername();
+        String expectedPassword = environment.getPassword();
         String oraclePartyNumber = "Abc123";
 
         //When:
@@ -45,7 +45,7 @@ public class CloudInviteUsersTest implements CloudInviteUsersPageInterface{
         //New SPA, new object...
         CloudInviteUsersPage cloudInviteUsersPage = new CloudInviteUsersPage(getDriverHandler());
         //Click Invite Users button on Invite users page
-        cloudInviteUsersPage.clickInviteUsersButton(); //if web element had an Id -- this would remove extra code needed to find element. Bridges gap between front end and testers
+        cloudInviteUsersPage.clickInviteUsersButton();
 
 
         //Test_SendKeysTo_OraclePartyNumberField

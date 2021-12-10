@@ -3,22 +3,21 @@ package com.vertexinc.returns.test.cloudui.util.pageinterface;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
-//Prior to time has existed vs Expected after some time has passed = Interface vs Class
-//By is a way to select element on a page
-//WebElement = actual element on page.
 public interface CloudInviteUsersPageInterface extends PageInterface {
 
     default By getInviteUsersButton() {
         return By.cssSelector("a[href='#/inviteNew']");
     }
 
-    default By getEmailField() {
-        return By.id("Email");
-    }
 
     default Select getRole_HTMLObject() {
         return null;//todo
     }
+
+    default By getEmailField() {
+        return By.id("Email");
+    }
+
 
     //Customer Admin
     default Select getAccountType_HTMLObject() {
@@ -29,8 +28,59 @@ public interface CloudInviteUsersPageInterface extends PageInterface {
         return null;//todo
     }
 
-    // Customer Admin
     default By getOraclePartyNumberField() {
         return By.cssSelector("input[name='OraclePartyNumber']");
     }
+
+    default By getClientName_Object() {
+        return null; //todo
+    }
+
+    default By getCountry_HTMLObject() {
+        return null; //todo
+    }
+
+    default By getStreetAddressField() {
+        return null;//todo
+    }
+
+    default By getStreetAddress2Field() {
+        return null;//todo
+    }
+
+    default By getCityField() {
+        return null;//todo
+    }
+
+    default By getState_HTMLObject() {
+        return null; //todo
+    }
+
+    default By getZipPostalCodeField() {
+        return null; //todo
+    }
+
+    default By getSubscription_HTMLObject() {
+
+        return null; //todo
+    }
+
+    default By getReservedPod_CheckBox() {
+        return null; //todo
+    }
+
+    default By getInvoiceCheckBox() {
+        return null; //todo
+    }
+
+    /**
+     * @deprecated Use {@link getSubscription_HTMLObject()} instead. getSubscription_HTMLObject and getFranchiseName() have different 'descriptions' in the UI but
+     * are the same <Select> object in front-end.
+     * **/
+
+    @Deprecated
+    default By getFranchiseNameField() {
+        return null; //todo
+    }
+
 }
