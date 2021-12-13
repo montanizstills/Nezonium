@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15a9a75a-d95f-495d-ac7a-841f15fac01e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudCalcParityLoginInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" afterDir="false" />
     </list>
     <list id="3f6a3b84-8c47-428e-b245-806b3de2198a" name="Changes by hunte" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -32,6 +39,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -74,9 +84,9 @@
       <recent name="com.vertexinc.returns.test.cloudui.resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Montaniz.Stills\OneDrive - Vertex, Inc\Desktop\dev\feat-abstraction" />
       <recent name="C:\Users\Montaniz.Stills\OneDrive - Vertex, Inc\Desktop\dev\feat-abstraction\src\test\java\com\vertexinc\returns\test\cloudui\util" />
       <recent name="C:\Users\Montaniz.Stills\OneDrive - Vertex, Inc\Desktop\dev\feat-abstraction\src\test\java\com\vertexinc\returns\test\cloudui\util\resources" />
-      <recent name="C:\Users\Montaniz.Stills\OneDrive - Vertex, Inc\Desktop\dev\feat-abstraction" />
       <recent name="C:\Users\Montaniz.Stills\OneDrive - Vertex, Inc\Desktop\dev\feat-abstraction\com.vertexinc.returns.test.cloudui" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -204,7 +214,7 @@
       <workItem from="1638550296005" duration="269000" />
       <workItem from="1638552651622" duration="109567000" />
       <workItem from="1639061406887" duration="2174000" />
-      <workItem from="1639063626263" duration="48516000" />
+      <workItem from="1639063626263" duration="57388000" />
     </task>
     <servers />
   </component>

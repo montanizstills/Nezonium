@@ -39,8 +39,8 @@ public interface DriverHandlerInterface {
     }
 
     default void click(By by) {
-        //        WebElement webElement = getWait()
         getWait().until(ExpectedConditions.presenceOfElementLocated(by));
+        getWait().until(ExpectedConditions.visibilityOf(getElement(by)));
         getWait().until(ExpectedConditions.elementToBeClickable(by));
         getDriver().findElement(by).click();
     }

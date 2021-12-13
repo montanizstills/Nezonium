@@ -7,6 +7,7 @@ import com.vertexinc.returns.test.cloudui.util.concretepage.CloudInviteUsersPage
 import com.vertexinc.returns.test.cloudui.util.concretepage.CloudLoginPage;
 import com.vertexinc.returns.test.cloudui.util.pageinterface.CloudInviteUsersPageInterface;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +30,7 @@ public class CloudInviteUsersTest implements CloudInviteUsersPageInterface{
         //Some user who can already log into system.
         String expectedUsername = environment.getUsername();
         String expectedPassword = environment.getPassword();
-        String oraclePartyNumber = "Abc123";
+        String expectedOraclePartyNumber = "123456";
 
         //When:
         //Create Login Page object for method reference:
@@ -47,13 +48,26 @@ public class CloudInviteUsersTest implements CloudInviteUsersPageInterface{
         //Click Invite Users button on Invite users page
         cloudInviteUsersPage.clickInviteUsersButton();
 
+//        synchronized (this){
+//            try {
+//                wait(5000);
+//            } catch (InterruptedException e) {
+//                throw new Error(e);
+//            }
+//        }
 
-        //Test_SendKeysTo_OraclePartyNumberField
-        cloudInviteUsersPage.enterOraclePartyNumber(oraclePartyNumber);
+        cloudInviteUsersPage.getRole_HTMLSelectObject().selectByVisibleText("Customer Admin");
+
+        cloudInviteUsersPage.enterOraclePartyNumber(expectedOraclePartyNumber);
         String actual = cloudInviteUsersPage.getOraclePartyNumber();
 
         //Then:
-        Assert.assertEquals(actual, oraclePartyNumber);
+        Assert.assertEquals(expectedOraclePartyNumber, actual);
+    }
+
+    @After
+    public void cleanUp(){
+        getDriverHandler().tearDown();
     }
 
     @Override

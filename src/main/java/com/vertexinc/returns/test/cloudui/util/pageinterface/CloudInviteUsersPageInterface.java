@@ -10,8 +10,9 @@ public interface CloudInviteUsersPageInterface extends PageInterface {
     }
 
 
-    default Select getRole_HTMLObject() {
-        return null;//todo
+//    Select role_HTMLSelectObject = new Select(getDriverHandler().getElement(By.cssSelector("select[name='Role']")));
+    default Select getRole_HTMLSelectObject() {
+        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='Role']")));
     }
 
     default By getEmailField() {
@@ -21,11 +22,11 @@ public interface CloudInviteUsersPageInterface extends PageInterface {
 
     //Customer Admin
     default Select getAccountType_HTMLObject() {
-        return null;//todo
+        return  new Select(getDriverHandler().getElement(By.cssSelector("select[name='']")));
     }
 
     default Select getVarCPAFranchiseName_HTMLObject() {
-        return null;//todo
+        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='']")));//todo
     }
 
     default By getOraclePartyNumberField() {
@@ -36,8 +37,8 @@ public interface CloudInviteUsersPageInterface extends PageInterface {
         return null; //todo
     }
 
-    default By getCountry_HTMLObject() {
-        return null; //todo
+    default Select getCountry_HTMLObject() {
+        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='']"))); //todo
     }
 
     default By getStreetAddressField() {
@@ -52,17 +53,17 @@ public interface CloudInviteUsersPageInterface extends PageInterface {
         return null;//todo
     }
 
-    default By getState_HTMLObject() {
-        return null; //todo
+    default Select getState_HTMLObject() {
+        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='']"))); //todo
     }
 
     default By getZipPostalCodeField() {
         return null; //todo
     }
 
-    default By getSubscription_HTMLObject() {
+    default Select getSubscription_HTMLObject() {
 
-        return null; //todo
+        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='']"))); //todo
     }
 
     default By getReservedPod_CheckBox() {
