@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15a9a75a-d95f-495d-ac7a-841f15fac01e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/UserCredentials.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Browsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Browsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudLogInPageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudLogInPageInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Environment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Environment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/UseCaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/UseCaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="3f6a3b84-8c47-428e-b245-806b3de2198a" name="Changes by hunte" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -219,7 +204,7 @@
       <workItem from="1638550296005" duration="269000" />
       <workItem from="1638552651622" duration="109567000" />
       <workItem from="1639061406887" duration="2174000" />
-      <workItem from="1639063626263" duration="44148000" />
+      <workItem from="1639063626263" duration="48516000" />
     </task>
     <servers />
   </component>
