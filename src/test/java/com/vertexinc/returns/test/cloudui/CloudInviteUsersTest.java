@@ -47,17 +47,8 @@ public class CloudInviteUsersTest implements CloudInviteUsersPage_UIMap {
         CloudInviteUsersPage cloudInviteUsersPage = new CloudInviteUsersPage(getDriverHandler());
         //Click Invite Users button on Invite users page
         cloudInviteUsersPage.clickInviteUsersButton();
-
-//        synchronized (this){
-//            try {
-//                wait(5000);
-//            } catch (InterruptedException e) {
-//                throw new Error(e);
-//            }
-//        }
-
-        cloudInviteUsersPage.getRole_HTMLSelectObject().selectByVisibleText("Customer Admin");
-
+        cloudInviteUsersPage.getDriverHandler().toSelect(getRole_SelectElement());
+        cloudInviteUsersPage.setRoleValue("Customer Admin");
         cloudInviteUsersPage.enterOraclePartyNumber(expectedOraclePartyNumber);
         String actual = cloudInviteUsersPage.getOraclePartyNumber();
 

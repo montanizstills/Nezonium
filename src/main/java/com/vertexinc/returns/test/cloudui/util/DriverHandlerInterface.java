@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  * DriverHandler is a class constructed to make use of `smart waits.` Waiting for elements to be rendered
@@ -36,6 +37,14 @@ public interface DriverHandlerInterface {
 
     default void navigateTo(String url) {
         getDriver().navigate().to(url);
+    }
+
+    default Select toSelect(By by) {
+        getWait().until(ExpectedConditions.presenceOfElementLocated(by));
+        getWait().until(ExpectedConditions.visibilityOf(getElement(by)));
+        getWait().until(ExpectedConditions.elementToBeClickable(by));
+        getWait().until(ExpectedConditions.not(ExpectedConditions.stalenessOf(getElement(by))));
+        return new Select(getElement(by));
     }
 
     default void click(By by) {

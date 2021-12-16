@@ -6,29 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="15a9a75a-d95f-495d-ac7a-841f15fac01e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/concretepage/CloudHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/concretepage/CloudHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/concretepage/CloudInviteUsersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/concretepage/CloudInviteUsersPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/concretepage/CloudLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/concretepage/CloudLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudCalcParityLoginInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudCommonUILoginPage_UIMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudHomePageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudHomePage_UIMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPage_UIMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudLogInPageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudLoginPage_UIMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudHomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudHomePageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/concretepage/CloudInviteUsersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/concretepage/CloudInviteUsersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/uimap/CloudInviteUsersPage_UIMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/uimap/CloudInviteUsersPage_UIMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudHomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudHomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudInviteUsersPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudInviteUsersPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudLoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudHomePageInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPageInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudLogInPageInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Page.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudHomePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudInviteUsersPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/concretepage/CloudLoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/pageinterface/PageInterface.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudHomePageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudHomePageTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/UseCaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/UseCaseTest.class" afterDir="false" />
     </list>
     <list id="3f6a3b84-8c47-428e-b245-806b3de2198a" name="Changes by hunte" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +48,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/pageinterface/CloudInviteUsersPage_UIMap.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/uimap/CloudInviteUsersPage_UIMap.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -234,7 +225,7 @@
       <workItem from="1638550296005" duration="269000" />
       <workItem from="1638552651622" duration="109567000" />
       <workItem from="1639061406887" duration="2174000" />
-      <workItem from="1639063626263" duration="69158000" />
+      <workItem from="1639063626263" duration="72170000" />
     </task>
     <servers />
   </component>

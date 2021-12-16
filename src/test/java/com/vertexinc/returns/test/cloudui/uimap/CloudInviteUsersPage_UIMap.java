@@ -11,9 +11,8 @@ public interface CloudInviteUsersPage_UIMap extends PageInterface {
     }
 
 
-//    Select role_HTMLSelectObject = new Select(getDriverHandler().getElement(By.cssSelector("select[name='Role']")));
-    default Select getRole_HTMLSelectObject() {
-        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='Role']")));
+    default By getRole_SelectElement(){
+        return By.cssSelector("select[name='Role']");
     }
 
     default By getEmailField() {
@@ -22,12 +21,12 @@ public interface CloudInviteUsersPage_UIMap extends PageInterface {
 
 
     //Customer Admin
-    default Select getAccountType_HTMLObject() {
-        return  new Select(getDriverHandler().getElement(By.cssSelector("select[name='']")));
+    default By getAccountType_HTMLObject() {
+        return   By.cssSelector("select[name='clientSubTypeName']");
     }
 
-    default Select getVarCPAFranchiseName_HTMLObject() {
-        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='']")));//todo
+    default By getVarCPAFranchiseName_HTMLObject() {
+        return  By.cssSelector("select[name='resellerName']");//todo
     }
 
     default By getOraclePartyNumberField() {
@@ -35,44 +34,44 @@ public interface CloudInviteUsersPage_UIMap extends PageInterface {
     }
 
     default By getClientName_Object() {
-        return null; //todo
+        return By.cssSelector("input[name='ClientName']"); //todo
     }
 
-    default Select getCountry_HTMLObject() {
-        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='']"))); //todo
+    default By getCountry_HTMLObject() {
+        return  By.cssSelector("select[name='Country']"); //todo
     }
 
     default By getStreetAddressField() {
-        return null;//todo
+        return By.cssSelector("input[name='Address1']");//todo
     }
 
     default By getStreetAddress2Field() {
-        return null;//todo
+        return By.cssSelector("input[name='Address2']");//todo
     }
 
     default By getCityField() {
-        return null;//todo
+        return By.cssSelector("input[name='City']");//todo
     }
 
-    default Select getState_HTMLObject() {
-        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='']"))); //todo
+    default By getState_HTMLObject() {
+        return  By.cssSelector("select[name='StateCode']"); //todo
     }
 
     default By getZipPostalCodeField() {
-        return null; //todo
+        return By.cssSelector("input[name='PostalCode']"); //todo
     }
 
-    default Select getSubscription_HTMLObject() {
+    default By getSubscription_HTMLObject() {
 
-        return new Select(getDriverHandler().getElement(By.cssSelector("select[name='']"))); //todo
+        return  By.cssSelector("select[name='subscriptionId']"); //todo
     }
 
     default By getReservedPod_CheckBox() {
-        return null; //todo
+        return By.cssSelector("input[name='isReservedPodChecked']"); //todo
     }
 
     default By getInvoiceCheckBox() {
-        return null; //todo
+        return By.cssSelector("input[name='isInvoiceChecked']"); //todo
     }
 
     /**

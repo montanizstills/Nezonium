@@ -26,4 +26,11 @@ public class CloudInviteUsersPage extends Page implements CloudInviteUsersPage_U
     public String getOraclePartyNumber() {
         return getDriverHandler().getText(getOraclePartyNumberField());
     }
+
+    public void setRoleValue(String inputValue) {
+        getDriverHandler().toSelect(getRole_SelectElement()).selectByVisibleText(inputValue);
+    }
+    public void getRoleValue(){
+        getDriverHandler().toSelect(getRole_SelectElement()).getFirstSelectedOption().getText();
+    }
 }
