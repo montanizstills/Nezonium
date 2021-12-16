@@ -3,16 +3,12 @@ package com.vertexinc.returns.test.cloudui;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;
 import com.vertexinc.returns.test.cloudui.util.Page;
-import com.vertexinc.returns.test.cloudui.util.pageinterface.PageInterface;
+import com.vertexinc.returns.test.cloudui.util.PageInterface;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.opera.OperaDriver;
 
 
 /**

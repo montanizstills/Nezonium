@@ -2,19 +2,19 @@ package com.vertexinc.returns.test.cloudui;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;
-import com.vertexinc.returns.test.cloudui.util.concretepage.CloudHomePage;
-import com.vertexinc.returns.test.cloudui.util.concretepage.CloudLoginPage;
-import com.vertexinc.returns.test.cloudui.util.pageinterface.CloudHomePageInterface;
+import com.vertexinc.returns.test.cloudui.concretepage.CloudHomePage;
+import com.vertexinc.returns.test.cloudui.concretepage.CloudLoginPage;
+import com.vertexinc.returns.test.cloudui.uimap.CloudHomePage_UIMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CloudHomePageTest implements CloudHomePageInterface {
+public class CloudHomePageTest implements CloudHomePage_UIMap {
 
     private WebDriver browser;
-    private final Environment environment = Environment.DEV;
+    private final Environment environment = Environment.QA;
     private DriverHandler driverHandler;
 
 

@@ -1,4 +1,4 @@
-package com.vertexinc.returns.test.cloudui.util.pageinterface;
+package com.vertexinc.returns.test.cloudui.util;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;

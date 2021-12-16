@@ -1,9 +1,10 @@
-package com.vertexinc.returns.test.cloudui.util.pageinterface;
+package com.vertexinc.returns.test.cloudui.uimap;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
+import com.vertexinc.returns.test.cloudui.util.PageInterface;
 import org.openqa.selenium.By;
 
-public interface CloudLogInPageInterface extends PageInterface {
+public interface CloudLoginPage_UIMap extends PageInterface {
 
     DriverHandler getDriverHandler();
 

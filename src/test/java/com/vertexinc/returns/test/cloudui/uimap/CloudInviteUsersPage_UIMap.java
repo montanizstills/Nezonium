@@ -1,9 +1,10 @@
-package com.vertexinc.returns.test.cloudui.util.pageinterface;
+package com.vertexinc.returns.test.cloudui.uimap;
 
+import com.vertexinc.returns.test.cloudui.util.PageInterface;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
-public interface CloudInviteUsersPageInterface extends PageInterface {
+public interface CloudInviteUsersPage_UIMap extends PageInterface {
 
     default By getInviteUsersButton() {
         return By.cssSelector("a[href='#/inviteNew']");

@@ -42,14 +42,14 @@ public interface DriverHandlerInterface {
         getWait().until(ExpectedConditions.presenceOfElementLocated(by));
         getWait().until(ExpectedConditions.visibilityOf(getElement(by)));
         getWait().until(ExpectedConditions.elementToBeClickable(by));
+        getWait().until(ExpectedConditions.not(ExpectedConditions.stalenessOf(getElement(by))));
         getDriver().findElement(by).click();
     }
 
     default void sendKeys(By by, CharSequence... characters) {
-        WebElement we = getDriver().findElement(by);
         getWait().until(ExpectedConditions.presenceOfElementLocated(by));
-        getWait().until(ExpectedConditions.visibilityOf(we));
-        getWait().until(ExpectedConditions.elementToBeClickable(we));
+        getWait().until(ExpectedConditions.visibilityOf(getElement(by)));
+        getWait().until(ExpectedConditions.elementToBeClickable(getElement(by)));
         getDriver().findElement(by).sendKeys(characters);
     }
 

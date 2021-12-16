@@ -1,8 +1,8 @@
-package com.vertexinc.returns.test.cloudui.util.pageinterface;
+package com.vertexinc.returns.test.cloudui.uimap;
 
 import org.openqa.selenium.By;
 
-public interface CloudCalcParityLoginInterface {
+public interface CloudCommonUILoginPage_UIMap {
 
     default By getUsernameField(){
         return  By.id("username");

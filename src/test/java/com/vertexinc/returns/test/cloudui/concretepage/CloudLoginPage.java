@@ -1,11 +1,11 @@
-package com.vertexinc.returns.test.cloudui.util.concretepage;
+package com.vertexinc.returns.test.cloudui.concretepage;
 
+import com.vertexinc.returns.test.cloudui.uimap.CloudLoginPage_UIMap;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
-import com.vertexinc.returns.test.cloudui.util.pageinterface.CloudLogInPageInterface;
 
 
-public class CloudLoginPage extends Page implements CloudLogInPageInterface {
+public class CloudLoginPage extends Page implements CloudLoginPage_UIMap {
 
     public CloudLoginPage(DriverHandler driverHandler) {
         super(driverHandler);

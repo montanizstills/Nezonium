@@ -1,8 +1,9 @@
-package com.vertexinc.returns.test.cloudui.util.pageinterface;
+package com.vertexinc.returns.test.cloudui.uimap;
 
+import com.vertexinc.returns.test.cloudui.util.PageInterface;
 import org.openqa.selenium.By;
 
-public interface CloudHomePageInterface extends PageInterface {
+public interface CloudHomePage_UIMap extends PageInterface {
 
 
     default By getDashboardButton() {

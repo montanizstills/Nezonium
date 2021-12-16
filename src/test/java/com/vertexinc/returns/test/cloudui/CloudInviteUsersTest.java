@@ -2,10 +2,10 @@ package com.vertexinc.returns.test.cloudui;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;
-import com.vertexinc.returns.test.cloudui.util.concretepage.CloudHomePage;
-import com.vertexinc.returns.test.cloudui.util.concretepage.CloudInviteUsersPage;
-import com.vertexinc.returns.test.cloudui.util.concretepage.CloudLoginPage;
-import com.vertexinc.returns.test.cloudui.util.pageinterface.CloudInviteUsersPageInterface;
+import com.vertexinc.returns.test.cloudui.concretepage.CloudHomePage;
+import com.vertexinc.returns.test.cloudui.concretepage.CloudInviteUsersPage;
+import com.vertexinc.returns.test.cloudui.concretepage.CloudLoginPage;
+import com.vertexinc.returns.test.cloudui.uimap.CloudInviteUsersPage_UIMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -13,7 +13,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CloudInviteUsersTest implements CloudInviteUsersPageInterface{
+public class CloudInviteUsersTest implements CloudInviteUsersPage_UIMap {
 
     private WebDriver browser;
     private Environment environment = Environment.QA;

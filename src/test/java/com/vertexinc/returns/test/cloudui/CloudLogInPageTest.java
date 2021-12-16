@@ -2,17 +2,17 @@ package com.vertexinc.returns.test.cloudui;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;
-import com.vertexinc.returns.test.cloudui.util.concretepage.CloudLoginPage;
-import com.vertexinc.returns.test.cloudui.util.pageinterface.CloudLogInPageInterface;
+import com.vertexinc.returns.test.cloudui.concretepage.CloudLoginPage;
+import com.vertexinc.returns.test.cloudui.uimap.CloudLoginPage_UIMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CloudLogInPageTest implements CloudLogInPageInterface {
+public class CloudLogInPageTest implements CloudLoginPage_UIMap {
 
-    private final Environment environment = Environment.DEV;
+    private final Environment environment = Environment.QA;
     private DriverHandler driverHandler;
     private WebDriver browser;
 
@@ -23,6 +23,7 @@ public class CloudLogInPageTest implements CloudLogInPageInterface {
         WebDriverManager.chromedriver().setup();
         this.browser = new ChromeDriver();
         this.driverHandler = new DriverHandler(this.browser);
+
         //End Setup
 
         //Test:

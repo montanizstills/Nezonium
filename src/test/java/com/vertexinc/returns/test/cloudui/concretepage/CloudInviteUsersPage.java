@@ -1,10 +1,10 @@
-package com.vertexinc.returns.test.cloudui.util.concretepage;
+package com.vertexinc.returns.test.cloudui.concretepage;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
-import com.vertexinc.returns.test.cloudui.util.pageinterface.CloudInviteUsersPageInterface;
+import com.vertexinc.returns.test.cloudui.uimap.CloudInviteUsersPage_UIMap;
 
-public class CloudInviteUsersPage extends Page implements CloudInviteUsersPageInterface {
+public class CloudInviteUsersPage extends Page implements CloudInviteUsersPage_UIMap {
 
     public CloudInviteUsersPage(DriverHandler driverHandler) {
         super(driverHandler);

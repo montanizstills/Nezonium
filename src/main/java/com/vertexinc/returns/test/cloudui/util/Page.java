@@ -1,7 +1,5 @@
 package com.vertexinc.returns.test.cloudui.util;
 
-import com.vertexinc.returns.test.cloudui.util.pageinterface.PageInterface;
-
 public class Page implements PageInterface {
 
     private final DriverHandler driverHandler;
