@@ -20,7 +20,7 @@ public class CloudLoginPage extends Page implements CloudLoginPage_UIMap {
         return getDriverHandler().getElement(getUsernameField()).getText();
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return getDriverHandler().getElement(getPasswordField()).getText();
     }
 
@@ -32,7 +32,7 @@ public class CloudLoginPage extends Page implements CloudLoginPage_UIMap {
     }
 
     public void enterPassword(String expectedPassword) {
-        getDriverHandler().sendKeys(getPasswordField(),expectedPassword);
+        getDriverHandler().sendKeys(getPasswordField(), expectedPassword);
     }
 
     public void clickForgotPasswordButton() {

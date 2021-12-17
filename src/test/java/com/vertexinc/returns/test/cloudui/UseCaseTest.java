@@ -1,9 +1,6 @@
 package com.vertexinc.returns.test.cloudui;
 
-import com.vertexinc.returns.test.cloudui.util.DriverHandler;
-import com.vertexinc.returns.test.cloudui.util.Environment;
-import com.vertexinc.returns.test.cloudui.util.Page;
-import com.vertexinc.returns.test.cloudui.util.PageInterface;
+import com.vertexinc.returns.test.cloudui.util.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,9 +25,9 @@ public class UseCaseTest implements PageInterface {
     //    Test that Framework can open webpage. The demo webpage will be Vertex Corporate home page.
     @Test
     public void Test_LoadCorporateWebPage() {
-        WebDriverManager.edgedriver().setup();
-        this.browser = new EdgeDriver(); //OLD
-        //browser = Browsers.CHROME.getInstance(); //NEW
+//        WebDriverManager.edgedriver().setup();
+//        this.browser = new EdgeDriver(); //OLD
+        browser = Browsers.CHROME.getInstance(); //NEW
         this.driverHandler = new DriverHandler(this.browser);
 
         //Given:

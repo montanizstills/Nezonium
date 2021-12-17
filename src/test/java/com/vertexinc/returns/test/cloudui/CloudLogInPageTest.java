@@ -31,7 +31,7 @@ public class CloudLogInPageTest implements CloudLoginPage_UIMap {
         String expectedUsername = "vertuser2@vertex.local";
         CloudLoginPage cloudLogInPage = new CloudLoginPage(driverHandler);
         //LoginPage object for method invocation
-        cloudLogInPage.navigateTo(environment);
+        cloudLogInPage.navigateTo(environment.getURL());
         //When:
         cloudLogInPage.enterUserName(expectedUsername);
         //Then:
@@ -57,7 +57,7 @@ public class CloudLogInPageTest implements CloudLoginPage_UIMap {
         String expectedPassword = "u$1&pBFlyf7R";
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
         //When:
-        cloudLoginPage.navigateTo(environment);
+        cloudLoginPage.navigateTo(environment.getURL());
         cloudLoginPage.enterPassword(expectedPassword);
         //Then:
         String actualPassword = cloudLoginPage.getPassword();
@@ -83,7 +83,7 @@ public class CloudLogInPageTest implements CloudLoginPage_UIMap {
         String expectedUrl = "https://devportal.vertexsmb.com/Admin/AdminDash";
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
         //When:
-        cloudLoginPage.navigateTo(environment);
+        cloudLoginPage.navigateTo(environment.getURL());
         cloudLoginPage.login(expectedUsername, expectedPassword);
         //Then:
         String actualURL = cloudLoginPage.getCurrentURL();
@@ -106,7 +106,7 @@ public class CloudLogInPageTest implements CloudLoginPage_UIMap {
         //Given:
         String expectedURL = "https://devauth.vertexsmb.com/forgot-password";
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
-        cloudLoginPage.navigateTo(environment);
+        cloudLoginPage.navigateTo(environment.getURL());
         //When:
         cloudLoginPage.clickForgotPasswordButton();
         String actualURL = cloudLoginPage.getCurrentURL();

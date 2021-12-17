@@ -30,11 +30,6 @@ public interface DriverHandlerInterface {
         return getElement(by).getText();
     }
 
-    default WebElement getElementByAttribute(By by, String attribute, String attributeValue) {
-        WebElement webElement = getDriver().findElement(by);
-        return getDriver().findElement(By.cssSelector(webElement.getTagName() + "['" + attribute + "=" + attributeValue + "']"));
-    }
-
     default void navigateTo(String url) {
         getDriver().navigate().to(url);
     }
@@ -44,6 +39,7 @@ public interface DriverHandlerInterface {
         getWait().until(ExpectedConditions.visibilityOf(getElement(by)));
         getWait().until(ExpectedConditions.elementToBeClickable(by));
         getWait().until(ExpectedConditions.not(ExpectedConditions.stalenessOf(getElement(by))));
+      //  getWait().until(ExpectedConditions.visibilityOfAllElements(() -> Page.class.getMethods()));
         return new Select(getElement(by));
     }
 
@@ -59,6 +55,7 @@ public interface DriverHandlerInterface {
         getWait().until(ExpectedConditions.presenceOfElementLocated(by));
         getWait().until(ExpectedConditions.visibilityOf(getElement(by)));
         getWait().until(ExpectedConditions.elementToBeClickable(getElement(by)));
+        getWait().until(ExpectedConditions.not(ExpectedConditions.stalenessOf(getElement(by))));
         getDriver().findElement(by).sendKeys(characters);
     }
 

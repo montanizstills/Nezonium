@@ -26,7 +26,7 @@ public interface CloudInviteUsersPage_UIMap extends PageInterface {
     }
 
     default By getVarCPAFranchiseName_HTMLObject() {
-        return  By.cssSelector("select[name='resellerName']");//todo
+        return  By.cssSelector("select[name='resellerName']");  
     }
 
     default By getOraclePartyNumberField() {
@@ -34,44 +34,44 @@ public interface CloudInviteUsersPage_UIMap extends PageInterface {
     }
 
     default By getClientName_Object() {
-        return By.cssSelector("input[name='ClientName']"); //todo
+        return By.cssSelector("input[name='ClientName']");   
     }
 
     default By getCountry_HTMLObject() {
-        return  By.cssSelector("select[name='Country']"); //todo
+        return  By.cssSelector("select[name='Country']");   
     }
 
     default By getStreetAddressField() {
-        return By.cssSelector("input[name='Address1']");//todo
+        return By.cssSelector("input[name='Address1']");  
     }
 
     default By getStreetAddress2Field() {
-        return By.cssSelector("input[name='Address2']");//todo
+        return By.cssSelector("input[name='Address2']");  
     }
 
     default By getCityField() {
-        return By.cssSelector("input[name='City']");//todo
+        return By.cssSelector("input[name='City']");  
     }
 
     default By getState_HTMLObject() {
-        return  By.cssSelector("select[name='StateCode']"); //todo
+        return  By.cssSelector("select[name='StateCode']");   
     }
 
     default By getZipPostalCodeField() {
-        return By.cssSelector("input[name='PostalCode']"); //todo
+        return By.cssSelector("input[name='PostalCode']");   
     }
 
     default By getSubscription_HTMLObject() {
 
-        return  By.cssSelector("select[name='subscriptionId']"); //todo
+        return  By.cssSelector("select[name='subscriptionId']");   
     }
 
     default By getReservedPod_CheckBox() {
-        return By.cssSelector("input[name='isReservedPodChecked']"); //todo
+        return By.cssSelector("input[name='isReservedPodChecked']");   
     }
 
     default By getInvoiceCheckBox() {
-        return By.cssSelector("input[name='isInvoiceChecked']"); //todo
+        return By.cssSelector("input[name='isInvoiceChecked']");   
     }
 
     /**
@@ -81,7 +81,7 @@ public interface CloudInviteUsersPage_UIMap extends PageInterface {
 
     @Deprecated
     default By getFranchiseNameField() {
-        return null; //todo
+        return null;   
     }
 
 }

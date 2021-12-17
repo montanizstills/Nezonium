@@ -30,7 +30,7 @@ public class CloudHomePageTest implements CloudHomePage_UIMap {
         //When:
         //Start Test by logging into cloud.
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
-        cloudLoginPage.navigateTo(environment);
+        cloudLoginPage.navigateTo(environment.getURL());
         //1.Login
         cloudLoginPage.login(expectedUsername, expectedPassword);
         CloudHomePage cloudHomePage = new CloudHomePage(getDriverHandler());
@@ -53,7 +53,7 @@ public class CloudHomePageTest implements CloudHomePage_UIMap {
         String expectedPassword = "u$1&pBFlyf7R";
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
         //When:
-        cloudLoginPage.navigateTo(environment);
+        cloudLoginPage.navigateTo(environment.getURL());
         cloudLoginPage.login(expectedUsername, expectedPassword);
         CloudHomePage cloudHomePage = new CloudHomePage(getDriverHandler());
         cloudHomePage.clickECWLogsButton();

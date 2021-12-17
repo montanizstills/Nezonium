@@ -6,15 +6,15 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
 
-public class DriverHandler implements DriverHandlerInterface{
+public final class DriverHandler implements DriverHandlerInterface{
 
     private final WebDriver driver;
     private final FluentWait<WebDriver> waitDriver;
 
-    public DriverHandler(WebDriver driver) {
+    public DriverHandler(final WebDriver driver) {
         this.driver = driver;
         waitDriver = new FluentWait<>(getDriver())
-                .withTimeout(Duration.ofMillis(30000))
+                .withTimeout(Duration.ofMillis(12000))
                 .pollingEvery(Duration.ofMillis(250))
                 .ignoring(NoSuchElementException.class);
     }

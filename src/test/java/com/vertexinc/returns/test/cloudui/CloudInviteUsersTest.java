@@ -36,7 +36,7 @@ public class CloudInviteUsersTest implements CloudInviteUsersPage_UIMap {
         //Create Login Page object for method reference:
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
         //Go to login page
-        cloudLoginPage.navigateTo(environment);
+        cloudLoginPage.navigateTo(environment.getURL());
         //Login
         cloudLoginPage.login(expectedUsername, expectedPassword);
         //Create CloudHomePageObject for method reference

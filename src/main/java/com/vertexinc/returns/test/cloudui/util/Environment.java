@@ -1,7 +1,6 @@
 package com.vertexinc.returns.test.cloudui.util;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -12,7 +11,7 @@ public enum Environment {
     VERTEX_HOME_PAGE("https://www.vertexinc.com/"),
 
     //Environments
-    DEV("https://devportal.vertexsmb.com/" ),
+    DEV("https://devportal.vertexsmb.com/"),
     QA("https://qaportal.vertexsmb.com/"),
     STAGE("https://stage.vertexsmb.com/"),
     PROD("https://portal.vertexsmb.com/");
@@ -22,7 +21,7 @@ public enum Environment {
     private final String username = "vertuser2@vertex.local";
     private final String password;
 
-    Environment(String envURL) {
+    Environment(final String envURL) {
         this.envURL = envURL;
         Properties properties = new Properties();
 
@@ -30,7 +29,7 @@ public enum Environment {
             InputStream input = new FileInputStream("src/main/resources/UserCredentials.properties");
             properties.load(input);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new Error(e);
         }
 
         this.password = properties.getProperty(this.name());

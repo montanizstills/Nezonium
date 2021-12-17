@@ -1,16 +1,21 @@
 package com.vertexinc.returns.test.cloudui.util;
 
-import com.vertexinc.returns.test.cloudui.util.DriverHandler;
-import com.vertexinc.returns.test.cloudui.util.Environment;
-
 public interface PageInterface {
-    DriverHandler getDriverHandler(); //to expose the driverHandler to implementing subclasses
+    /**
+     * This method is used to expose the driverHandler to implementing subclasses
+     **/
+    DriverHandler getDriverHandler();
+
+    /**
+     * This following - method architecture hides unneeded knowledge concerning the inner-workings of the DriverHandler from the user.
+     **/
 
     default String getCurrentURL() {
         return getDriverHandler().getDriver().getCurrentUrl();
     }
-    default void navigateTo(Environment environment) {
-        getDriverHandler().navigateTo(environment.getURL());
+
+    default void navigateTo(String url) {
+        getDriverHandler().navigateTo(url);
     }
 
 }
