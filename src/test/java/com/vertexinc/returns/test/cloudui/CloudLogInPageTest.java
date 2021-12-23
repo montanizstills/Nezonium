@@ -23,7 +23,6 @@ public class CloudLogInPageTest implements CloudLoginPage_UIMap {
         WebDriverManager.chromedriver().setup();
         this.browser = new ChromeDriver();
         this.driverHandler = new DriverHandler(this.browser);
-
         //End Setup
 
         //Test:

@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Nezonium" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15a9a75a-d95f-495d-ac7a-841f15fac01e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/concretepage/CloudCommonUILoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/PageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/PageInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudHomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudHomePageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/concretepage/CloudLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/concretepage/CloudLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/uimap/CloudInviteUsersPage_UIMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/uimap/CloudInviteUsersPage_UIMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Environment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Environment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudHomePageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudHomePageTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/UseCaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/UseCaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/UserCredentials.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Browsers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Environment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vertexinc/returns/test/cloudui/util/Page.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudHomePageTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/vertexinc/returns/test/cloudui/UseCaseTest.class" beforeDir="false" />
     </list>
     <list id="3f6a3b84-8c47-428e-b245-806b3de2198a" name="Changes by hunte" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +33,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,6 +58,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/uimap/CloudInviteUsersPage_UIMap.java" root0="SKIP_INSPECTION" />
+    <setting file="mock:///PageObject.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,13 +90,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="settings.editor.selected.configurable" value="page.object.configurable" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.vertexinc.returns.test.cloudui" />
       <recent name="com.vertexinc.returns.test.cloudui.tests" />
       <recent name="com.vertexinc.returns.test.cloudui.resources" />
     </key>
@@ -101,10 +109,11 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.vertexinc.returns.test.cloudui" />
+      <recent name="" />
       <recent name="com.vertexinc.returns.test.cloudui.util.concretepage" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CloudLogInPageTest.Test_EnterUsernameField">
+  <component name="RunManager" selected="JUnit.CloudHomePageTest.Test_Click_ECW_Logs_Button">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -120,7 +129,7 @@
       <module name="feat-abstraction" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vertexinc.returns.test.cloudui.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,7 +145,7 @@
       <module name="feat-abstraction" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vertexinc.returns.test.cloudui.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,7 +161,7 @@
       <module name="feat-abstraction" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vertexinc.returns.test.cloudui.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -168,7 +177,7 @@
       <module name="feat-abstraction" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vertexinc.returns.test.cloudui.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -184,7 +193,7 @@
       <module name="feat-abstraction" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vertexinc.returns.test.cloudui.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -205,13 +214,17 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CloudHomePageTest.Test_Click_ECW_Logs_Button" />
+        <item itemvalue="JUnit.UseCaseTest.Test_LoadCorporateWebPage" />
         <item itemvalue="JUnit.CloudLogInPageTest.Test_EnterUsernameField" />
         <item itemvalue="JUnit.CloudInviteUsersTest.Test_StandardUserNoEditCompanyConfiguration" />
-        <item itemvalue="JUnit.UseCaseTest.Test_LoadCorporateWebPage" />
-        <item itemvalue="JUnit.CloudHomePageTest.Test_Click_ECW_Logs_Button" />
         <item itemvalue="JUnit.CloudHomePageTest.Test_Click_Rates_and_Jurisdictions_Button" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastFrameworkName" value="Selenium" />
+    <option name="lastLanguageId" value="JAVA" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -228,7 +241,8 @@
       <workItem from="1638550296005" duration="269000" />
       <workItem from="1638552651622" duration="109567000" />
       <workItem from="1639061406887" duration="2174000" />
-      <workItem from="1639063626263" duration="80175000" />
+      <workItem from="1639063626263" duration="81173000" />
+      <workItem from="1639750675751" duration="12906000" />
     </task>
     <servers />
   </component>
@@ -262,11 +276,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Browsers.java</url>
           <line>17</line>
           <option name="timeStamp" value="9" />
@@ -285,5 +294,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

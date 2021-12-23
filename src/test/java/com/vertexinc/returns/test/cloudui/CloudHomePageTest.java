@@ -1,5 +1,6 @@
 package com.vertexinc.returns.test.cloudui;
 
+import com.vertexinc.returns.test.cloudui.concretepage.CloudCommonUILoginPage;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;
 import com.vertexinc.returns.test.cloudui.concretepage.CloudHomePage;
@@ -43,7 +44,7 @@ public class CloudHomePageTest implements CloudHomePage_UIMap {
     }
 
     @Test
-    public synchronized void Test_Click_ECW_Logs_Button() {
+    public void Test_Click_ECW_Logs_Button() {
         WebDriverManager.chromedriver().setup();
         this.browser = new ChromeDriver();
         this.driverHandler = new DriverHandler(this.browser);
@@ -51,14 +52,17 @@ public class CloudHomePageTest implements CloudHomePage_UIMap {
         //Given:
         String expectedUsername = "vertuser2@vertex.local";
         String expectedPassword = "u$1&pBFlyf7R";
+        CloudCommonUILoginPage cloudCommonUILoginPage = new CloudCommonUILoginPage(getDriverHandler());
+
+
         CloudLoginPage cloudLoginPage = new CloudLoginPage(getDriverHandler());
         //When:
-        cloudLoginPage.navigateTo(environment.getURL());
+        cloudLoginPage.navigateTo("devportal.vertexsmb.com");
         cloudLoginPage.login(expectedUsername, expectedPassword);
         CloudHomePage cloudHomePage = new CloudHomePage(getDriverHandler());
         cloudHomePage.clickECWLogsButton();
         //Then:
-        Assert.assertEquals("https://devportal.vertexsmb.com/Admin/EcWizardLogs", getDriverHandler().getCurrentUrl());
+        Assert.assertEquals("https://devportal.vertexsmb.com/Admin/EcWizardLogs", cloudHomePage.getCurrentURL());
 
         //clean up
         getDriverHandler().tearDown();
