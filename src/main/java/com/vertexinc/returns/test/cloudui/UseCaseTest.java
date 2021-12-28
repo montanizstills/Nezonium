@@ -1,14 +1,13 @@
 package com.vertexinc.returns.test.cloudui;
 
+import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Environment;
 import com.vertexinc.returns.test.cloudui.util.Page;
-import com.vertexinc.returns.test.cloudui.util.PageInterface;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
 
 /**
@@ -19,25 +18,20 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
  * This architecture aims to alleviate `mistakes` in testing, by enforcing strict type requirements. Such as <Test extends PageBehaviour>
  **/
 
-public class UseCaseTest implements PageInterface {
+public class UseCaseTest {
 
-    private final Environment environment = Environment.VERTEX_HOME_PAGE;
+    private Environment environment;
     private DriverHandler driverHandler;
     private WebDriver browser;
 
+
     //    Test that Framework can open webpage. The demo webpage will be Vertex Corporate home page.
-    public static void main(String[] args) {
-
-    }
-
-    @Test
-    public void Test_LoadCorporateWebPage() {
-        WebDriverManager.iedriver().setup();
-        this.browser = new InternetExplorerDriver();
-        this.driverHandler = new DriverHandler(this.browser);
+    public void Test_LoadCorporateWebPage(Environment environment, Browsers browsers) {
+        this.browser = browsers.getDriver();
+        this.driverHandler = new DriverHandler(getBrowser());
 
         //Given:
-        String expectedURL = environment.getURL();
+        String expectedURL = "https://www.vertexinc.com/";
         Page page = new Page(getDriverHandler());
 
         //When:
@@ -47,16 +41,47 @@ public class UseCaseTest implements PageInterface {
         String actualURL = page.getCurrentURL();
         Assert.assertEquals(expectedURL, actualURL);
 
-        //clean up
-        getDriverHandler().tearDown();
     }//End Test Case
 
-    @Override
+
+    public void Test_AssertTrue(Environment environment, Browsers browsers) {
+        this.environment = environment;
+        this.browser = browsers.getDriver();
+        this.driverHandler = new DriverHandler(getBrowser());
+
+        //Given:
+        //When:
+        //Then:
+        Assert.assertTrue(true);
+
+    }
+
+    @After
+   public void tearDown(){
+        getDriverHandler().tearDown();
+    }
+
+    @Test
+    public void test1() {
+//        Test_AssertTrue(Environment.DEV, Browsers.CHROME);
+//        Test_AssertTrue(Environment.DEV, Browsers.EDGE);
+//        Test_AssertTrue(Environment.DEV, Browsers.IE);
+
+        Test_LoadCorporateWebPage(Environment.DEV, Browsers.CHROME);
+        Test_LoadCorporateWebPage(Environment.DEV, Browsers.EDGE);
+        Test_LoadCorporateWebPage(Environment.DEV, Browsers.IE);
+
+    }
+
+
     public DriverHandler getDriverHandler() {
         return this.driverHandler;
     }
 
 
+    public WebDriver getBrowser() {
+        return browser;
+    }
 }//End MyTestClass
 
 

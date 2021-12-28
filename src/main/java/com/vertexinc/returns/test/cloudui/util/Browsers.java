@@ -8,33 +8,34 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.function.Supplier;
 
-/**NOT READY FOR IMPLEMENTATION. PLEASE DO NOT USE IN CODE**/
+/**
+ * NOT READY FOR IMPLEMENTATION. PLEASE DO NOT USE IN CODE
+ **/
 public enum Browsers {
 
-    FIREFOX(WebDriverManager::firefoxdriver, FirefoxDriver::new),
-    CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
-    OPERA(WebDriverManager::operadriver, OperaDriver::new),
-    IE(WebDriverManager::iedriver, InternetExplorerDriver::new),
-    EDGE(WebDriverManager::edgedriver, EdgeDriver::new);
+    FIREFOX(WebDriverManager::firefoxdriver),
+    CHROME(WebDriverManager::chromedriver),
+    OPERA(WebDriverManager::operadriver),
+    IE(WebDriverManager::iedriver),
+    EDGE(WebDriverManager::edgedriver);
 
-    private WebDriver driver;
-    private WebDriverManager webDriverManager;
+    private final WebDriver driver;
+//    private final WebDriverManager webDriverManager;
 
-    Browsers(Supplier<WebDriverManager> webDriverManagerSupplier, Supplier<WebDriver> webDriverSupplier) {
-        this.webDriverManager = webDriverManagerSupplier.get();
-        getWebDriverManager().setup();
-        this.driver = webDriverSupplier.get();
+    Browsers(Supplier<WebDriverManager> webDriverManagerSupplier) {
+//        this.webDriverManager = webDriverManagerSupplier.get();
+        this.driver = webDriverManagerSupplier.get().create();
     }
 
+//    private WebDriverManager getWebDriverManager() {
+//        return this.webDriverManager;
+//    }
 
-    private WebDriverManager getWebDriverManager() {
-        return this.webDriverManager;
-    }
-
-    public WebDriver getInstance() {
+    public WebDriver getDriver() {
         return this.driver;
     }
 
