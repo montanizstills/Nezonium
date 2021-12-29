@@ -5,8 +5,16 @@ import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+import org.junit.runners.model.Statement;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
+import java.io.File;
 
 
 /**
@@ -40,6 +48,8 @@ public class UseCaseTest {
         //Then:
         String actualURL = page.getCurrentURL();
         Assert.assertEquals(expectedURL, actualURL);
+
+        getDriverHandler().takeScreenShot();
 
     }//End Test Case
 

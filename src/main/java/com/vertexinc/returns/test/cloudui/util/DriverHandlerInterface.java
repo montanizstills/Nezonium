@@ -1,11 +1,13 @@
 package com.vertexinc.returns.test.cloudui.util;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * DriverHandler is a class constructed to make use of `smart waits.` Waiting for elements to be rendered
@@ -69,6 +71,18 @@ public interface DriverHandlerInterface {
 
     default void clickRefreshButton() {
         getDriver().navigate().refresh();
+    }
+
+    default void takeScreenShot(){
+        TakesScreenshot screenshot = (TakesScreenshot) getDriver();
+        File screenShotFile = screenshot.getScreenshotAs(OutputType.FILE);
+        File destFile = new File("myfile.jpeg");
+        try {
+            FileUtils.copyFile(screenShotFile,destFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     default void tearDown() {
