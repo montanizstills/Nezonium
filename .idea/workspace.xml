@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="15a9a75a-d95f-495d-ac7a-841f15fac01e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Browsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Browsers.java" afterDir="false" />
     </list>
@@ -48,7 +47,6 @@
     <setting file="jar://$MAVEN_REPOSITORY$/io/github/bonigarcia/webdrivermanager/5.0.2/webdrivermanager-5.0.2.jar!/io/github/bonigarcia/wdm/managers/ChromeDriverManager.class" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/uimap/CloudInviteUsersPage_UIMap.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/io/github/bonigarcia/webdrivermanager/5.0.2/webdrivermanager-5.0.2.jar!/io/github/bonigarcia/wdm/WebDriverManager.class" root0="SKIP_INSPECTION" />
-    <setting file="mock:///PageObject.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,7 +101,7 @@
       <recent name="com.vertexinc.returns.test.cloudui.util.concretepage" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UseCaseTest.test1">
+  <component name="RunManager" selected="JUnit.UseCaseTest.Test_LoadCorporateWebPage">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -193,17 +191,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.UseCaseTest" />
       <item itemvalue="JUnit.CloudHomePageTest.Test_Click_ECW_Logs_Button" />
       <item itemvalue="JUnit.UseCaseTest.Test_LoadCorporateWebPage" />
       <item itemvalue="JUnit.CloudLogInPageTest.Test_EnterUsernameField" />
       <item itemvalue="JUnit.UseCaseTest.test1" />
-      <item itemvalue="Application.UseCaseTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UseCaseTest.Test_LoadCorporateWebPage" />
         <item itemvalue="JUnit.UseCaseTest.test1" />
         <item itemvalue="Application.UseCaseTest" />
-        <item itemvalue="JUnit.UseCaseTest.Test_LoadCorporateWebPage" />
         <item itemvalue="JUnit.CloudHomePageTest.Test_Click_ECW_Logs_Button" />
         <item itemvalue="JUnit.CloudLogInPageTest.Test_EnterUsernameField" />
       </list>
@@ -229,7 +227,8 @@
       <workItem from="1638552651622" duration="109567000" />
       <workItem from="1639061406887" duration="2174000" />
       <workItem from="1639063626263" duration="81173000" />
-      <workItem from="1639750675751" duration="29214000" />
+      <workItem from="1639750675751" duration="31779000" />
+      <workItem from="1640725621337" duration="7566000" />
     </task>
     <servers />
   </component>
@@ -258,29 +257,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Browsers.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Browsers.java</url>
-          <line>25</line>
-          <properties field="driver" class="com.vertexinc.returns.test.cloudui.util.Browsers" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/Browsers.java</url>
-          <line>26</line>
-          <properties field="webDriverManager" class="com.vertexinc.returns.test.cloudui.util.Browsers" />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

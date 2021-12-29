@@ -8,7 +8,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.function.Supplier;
 
@@ -17,26 +16,31 @@ import java.util.function.Supplier;
  **/
 public enum Browsers {
 
-    FIREFOX(WebDriverManager::firefoxdriver),
-    CHROME(WebDriverManager::chromedriver),
-    OPERA(WebDriverManager::operadriver),
-    IE(WebDriverManager::iedriver),
-    EDGE(WebDriverManager::edgedriver);
+    FIREFOX(WebDriverManager::firefoxdriver, FirefoxDriver::new),
+    CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
+    OPERA(WebDriverManager::operadriver, OperaDriver::new),
+    IE(WebDriverManager::iedriver, InternetExplorerDriver::new),
+    EDGE(WebDriverManager::edgedriver, EdgeDriver::new);
 
-    private final WebDriver driver;
-//    private final WebDriverManager webDriverManager;
+    private final Supplier<WebDriver> webDriverSupplier;
+    private final Supplier<WebDriverManager> webDriverManagerSupplier;
 
-    Browsers(Supplier<WebDriverManager> webDriverManagerSupplier) {
-//        this.webDriverManager = webDriverManagerSupplier.get();
-        this.driver = webDriverManagerSupplier.get().create();
+    Browsers(Supplier<WebDriverManager> webDriverManagerSupplier, Supplier<WebDriver> webDriverSupplier) {
+        this.webDriverManagerSupplier = webDriverManagerSupplier;
+        this.webDriverSupplier = webDriverSupplier;
     }
 
-//    private WebDriverManager getWebDriverManager() {
-//        return this.webDriverManager;
-//    }
+    public Supplier<WebDriverManager> getWebDriverManagerSupplier() {
+        return this.webDriverManagerSupplier;
+    }
 
-    public WebDriver getDriver() {
-        return this.driver;
+    public Supplier<WebDriver> getWebDriverSupplier() {
+        return this.webDriverSupplier;
+    }
+
+    public WebDriver getInstance(){
+        getWebDriverManagerSupplier().get().setup();
+        return getWebDriverSupplier().get();
     }
 
 

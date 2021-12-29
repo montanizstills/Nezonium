@@ -2,12 +2,15 @@ package com.vertexinc.returns.test.cloudui;
 
 import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
-import com.vertexinc.returns.test.cloudui.util.Environment;
 import com.vertexinc.returns.test.cloudui.util.Page;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 
 /**
@@ -20,14 +23,15 @@ import org.openqa.selenium.WebDriver;
 
 public class UseCaseTest {
 
-    private Environment environment;
     private DriverHandler driverHandler;
     private WebDriver browser;
 
 
+    @Test
     //    Test that Framework can open webpage. The demo webpage will be Vertex Corporate home page.
-    public void Test_LoadCorporateWebPage(Environment environment, Browsers browsers) {
-        this.browser = browsers.getDriver();
+    public void Test_LoadCorporateWebPage() {
+
+        this.browser = Browsers.CHROME.getInstance();
         this.driverHandler = new DriverHandler(getBrowser());
 
         //Given:
@@ -44,40 +48,14 @@ public class UseCaseTest {
     }//End Test Case
 
 
-    public void Test_AssertTrue(Environment environment, Browsers browsers) {
-        this.environment = environment;
-        this.browser = browsers.getDriver();
-        this.driverHandler = new DriverHandler(getBrowser());
-
-        //Given:
-        //When:
-        //Then:
-        Assert.assertTrue(true);
-
-    }
-
     @After
-   public void tearDown(){
+    public void tearDown() {
         getDriverHandler().tearDown();
     }
-
-    @Test
-    public void test1() {
-//        Test_AssertTrue(Environment.DEV, Browsers.CHROME);
-//        Test_AssertTrue(Environment.DEV, Browsers.EDGE);
-//        Test_AssertTrue(Environment.DEV, Browsers.IE);
-
-        Test_LoadCorporateWebPage(Environment.DEV, Browsers.CHROME);
-        Test_LoadCorporateWebPage(Environment.DEV, Browsers.EDGE);
-        Test_LoadCorporateWebPage(Environment.DEV, Browsers.IE);
-
-    }
-
 
     public DriverHandler getDriverHandler() {
         return this.driverHandler;
     }
-
 
     public WebDriver getBrowser() {
         return browser;
