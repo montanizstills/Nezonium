@@ -1,10 +1,12 @@
 package com.vertexinc.returns.test.cloudui.util;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Rule;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
@@ -73,21 +75,8 @@ public interface DriverHandlerInterface {
         getDriver().navigate().refresh();
     }
 
-    default void takeScreenShot(){
-        TakesScreenshot screenshot = (TakesScreenshot) getDriver();
-        File screenShotFile = screenshot.getScreenshotAs(OutputType.FILE);
-        File destFile = new File("myfile.jpeg");
-        try {
-            FileUtils.copyFile(screenShotFile,destFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     default void tearDown() {
-//        Wait a few seconds to see results in-action or take screenshot
-//        takeScreenShot();
         if (getDriver() != null)
             getDriver().quit();
     }

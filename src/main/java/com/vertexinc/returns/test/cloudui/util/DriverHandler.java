@@ -1,17 +1,12 @@
 package com.vertexinc.returns.test.cloudui.util;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 
-public final class DriverHandler implements DriverHandlerInterface{
+public final class DriverHandler implements DriverHandlerInterface {
 
     private final WebDriver driver;
     private final FluentWait<WebDriver> waitDriver;

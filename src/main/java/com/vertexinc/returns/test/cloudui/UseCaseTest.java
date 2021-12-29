@@ -1,21 +1,14 @@
 package com.vertexinc.returns.test.cloudui;
 
+import com.vertexinc.returns.test.cloudui.rules.ScreenShotOnFailRule;
 import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.junit.rules.TestName;
 import org.openqa.selenium.WebDriver;
-
-import java.io.File;
-
 
 /**
  * This framework aims to reduce future testing labor as tests (class UseCaseTest) implement behaviours of pre-defined pages.
@@ -28,14 +21,19 @@ import java.io.File;
 public class UseCaseTest {
 
     private DriverHandler driverHandler;
-    private WebDriver browser;
+    private final WebDriver browser = Browsers.EDGE.getInstance();
+
+    @Rule public TestName name = new TestName();
+
+    //The way File.java normalizes the file path, you mustn't add a preceding forward-slash in filepath.
+    @Rule public ScreenShotOnFailRule screenShotOnFail = new ScreenShotOnFailRule("src/main/resources/",getTestName(),getBrowser());
+
 
 
     @Test
     //    Test that Framework can open webpage. The demo webpage will be Vertex Corporate home page.
     public void Test_LoadCorporateWebPage() {
 
-        this.browser = Browsers.EDGE.getInstance();
         this.driverHandler = new DriverHandler(getBrowser());
 
         //Given:
@@ -47,17 +45,10 @@ public class UseCaseTest {
 
         //Then:
         String actualURL = page.getCurrentURL();
+
         Assert.assertEquals(expectedURL, actualURL);
 
-        getDriverHandler().takeScreenShot();
-
     }//End Test Case
-
-
-    @After
-    public void tearDown() {
-        getDriverHandler().tearDown();
-    }
 
     public DriverHandler getDriverHandler() {
         return this.driverHandler;
@@ -65,6 +56,10 @@ public class UseCaseTest {
 
     public WebDriver getBrowser() {
         return browser;
+    }
+
+    public String getTestName(){
+        return this.name.getMethodName();
     }
 }//End MyTestClass
 

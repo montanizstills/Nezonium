@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15a9a75a-d95f-495d-ac7a-841f15fac01e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/rules/ScreenShotOnFailRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" afterDir="false" />
@@ -81,7 +83,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="page.object.configurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -228,7 +230,7 @@
       <workItem from="1639061406887" duration="2174000" />
       <workItem from="1639063626263" duration="81173000" />
       <workItem from="1639750675751" duration="31779000" />
-      <workItem from="1640725621337" duration="11424000" />
+      <workItem from="1640725621337" duration="29623000" />
     </task>
     <servers />
   </component>
