@@ -10,12 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15a9a75a-d95f-495d-ac7a-841f15fac01e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/rules/ScreenShotOnFailRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Nezonium/feat-abstraction.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/rules/ScreenShotOnFailRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/rules/ScreenShotOnFailRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/util/DriverHandlerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudHomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudHomePageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudInviteUsersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/CloudLogInPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +49,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$MAVEN_REPOSITORY$/io/github/bonigarcia/webdrivermanager/5.0.2/webdrivermanager-5.0.2.jar!/io/github/bonigarcia/wdm/managers/ChromeDriverManager.class" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/test/java/com/vertexinc/returns/test/cloudui/uimap/CloudInviteUsersPage_UIMap.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/io/github/bonigarcia/webdrivermanager/5.0.2/webdrivermanager-5.0.2.jar!/io/github/bonigarcia/wdm/managers/ChromeDriverManager.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/io/github/bonigarcia/webdrivermanager/5.0.2/webdrivermanager-5.0.2.jar!/io/github/bonigarcia/wdm/WebDriverManager.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -103,7 +106,7 @@
       <recent name="com.vertexinc.returns.test.cloudui.util.concretepage" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UseCaseTest.Test_LoadCorporateWebPage">
+  <component name="RunManager" selected="JUnit.UseCaseTest.testChrome">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -144,22 +147,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloudLogInPageTest.Test_EnterUsernameField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="feat-abstraction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vertexinc.returns.test.cloudui" />
-      <option name="MAIN_CLASS_NAME" value="com.vertexinc.returns.test.cloudui.CloudLogInPageTest" />
-      <option name="METHOD_NAME" value="Test_EnterUsernameField" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UseCaseTest.Test_LoadCorporateWebPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="feat-abstraction" />
       <extension name="coverage">
@@ -192,20 +179,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UseCaseTest.testChrome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="feat-abstraction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vertexinc.returns.test.cloudui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vertexinc.returns.test.cloudui" />
+      <option name="MAIN_CLASS_NAME" value="com.vertexinc.returns.test.cloudui.UseCaseTest" />
+      <option name="METHOD_NAME" value="testChrome" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.UseCaseTest" />
       <item itemvalue="JUnit.CloudHomePageTest.Test_Click_ECW_Logs_Button" />
       <item itemvalue="JUnit.UseCaseTest.Test_LoadCorporateWebPage" />
-      <item itemvalue="JUnit.CloudLogInPageTest.Test_EnterUsernameField" />
       <item itemvalue="JUnit.UseCaseTest.test1" />
+      <item itemvalue="JUnit.UseCaseTest.testChrome" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UseCaseTest.testChrome" />
         <item itemvalue="JUnit.UseCaseTest.Test_LoadCorporateWebPage" />
         <item itemvalue="JUnit.UseCaseTest.test1" />
         <item itemvalue="Application.UseCaseTest" />
         <item itemvalue="JUnit.CloudHomePageTest.Test_Click_ECW_Logs_Button" />
-        <item itemvalue="JUnit.CloudLogInPageTest.Test_EnterUsernameField" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +233,8 @@
       <workItem from="1639061406887" duration="2174000" />
       <workItem from="1639063626263" duration="81173000" />
       <workItem from="1639750675751" duration="31779000" />
-      <workItem from="1640725621337" duration="29623000" />
+      <workItem from="1640725621337" duration="33500000" />
+      <workItem from="1640835401919" duration="7316000" />
     </task>
     <servers />
   </component>
@@ -259,6 +263,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/vertexinc/returns/test/cloudui/UseCaseTest.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

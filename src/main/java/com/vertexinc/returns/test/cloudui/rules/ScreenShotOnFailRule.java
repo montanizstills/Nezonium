@@ -1,6 +1,6 @@
 package com.vertexinc.returns.test.cloudui.rules;
 
-import com.vertexinc.returns.test.cloudui.util.Browsers;
+import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import org.apache.commons.io.FileUtils;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
@@ -13,33 +13,32 @@ import java.io.IOException;
 
 public class ScreenShotOnFailRule extends TestWatcher {
 
-    private WebDriver driver;
+    private final DriverHandler driverHandler;
     private final String outputDir;
-    private final String testName;
 
 //   public FailScreenshot(String outputDir){
 //        this.outputDir=outputDir;
 //    }
 
-    public ScreenShotOnFailRule(String screenShotOutputDir, String testName, WebDriver driver) {
-        this.driver = driver;
+    public ScreenShotOnFailRule(String screenShotOutputDir, DriverHandler driverHandler) {
+        this.driverHandler = driverHandler;
         this.outputDir = screenShotOutputDir;
-        this.testName = testName;
     }
+
 
     @Override
     public void failed(Throwable throwable, Description description) {
         System.out.println("This test has failed!");
         System.out.println("Screenshot initiated!");
-        takeScreenShot(description.getMethodName(),getDriver());
+        String screenShotName = description.getMethodName();
+        takeScreenShot(screenShotName);
 
     }
 
-    private void takeScreenShot(String testName, WebDriver webDriver) {
-        this.driver = webDriver;
-        TakesScreenshot screenshot = (TakesScreenshot) getDriver();
+    private void takeScreenShot(String testName) {
+        TakesScreenshot screenshot = (TakesScreenshot) getDriverHandler().getDriver();
         File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
-        File destFile = new File(getOutputDir()+testName+".jpg");
+        File destFile = new File(getOutputDir() + testName + ".jpg");
         try {
             FileUtils.copyFile(srcFile, destFile);
         } catch (IOException e) {
@@ -50,18 +49,22 @@ public class ScreenShotOnFailRule extends TestWatcher {
 
     @Override
     public void finished(Description description) {
-        getDriver().quit();
+        if (getDriver() != null) {
+            getDriver().quit();
+        }
+
     }
 
     public WebDriver getDriver() {
-        return this.driver;
+        return this.driverHandler.getDriver();
     }
 
     public String getOutputDir() {
         return this.outputDir;
     }
 
-    private String getTestName() {
-        return this.testName;
+    public DriverHandler getDriverHandler() {
+        return driverHandler;
     }
+
 }

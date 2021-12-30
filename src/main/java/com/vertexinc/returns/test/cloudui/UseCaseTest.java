@@ -8,7 +8,6 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.openqa.selenium.WebDriver;
 
 /**
  * This framework aims to reduce future testing labor as tests (class UseCaseTest) implement behaviours of pre-defined pages.
@@ -20,25 +19,37 @@ import org.openqa.selenium.WebDriver;
 
 public class UseCaseTest {
 
-    private DriverHandler driverHandler;
-    private final WebDriver browser = Browsers.EDGE.getInstance();
+    private DriverHandler driverHandler = new DriverHandler(Browsers.EDGE);
+    @Rule public ScreenShotOnFailRule screenShotOnFailRule = new ScreenShotOnFailRule("src/main/resources", getDriverHandler());
+    @Rule public TestName testName = new TestName();
+    @Test public void shouldPass(){Assert.assertTrue(true);}
+    @Test public void shouldFail(){Assert.fail();}
 
-    @Rule public TestName name = new TestName();
+//    @Test
+//    public void testChrome() {
+//        this.driverHandler = new DriverHandler(Browsers.CHROME);
+//        Test_LoadCorporateWebPage(getDriverHandler());
+//        Test_LoadCorporateWebPage_Then_Fail(getDriverHandler());
+//    }
+//
+//    @Test
+//    public  void testMSEdge(){
+//        this.driverHandler=new DriverHandler(Browsers.EDGE);
+//        Test_LoadCorporateWebPage_Then_Fail(getDriverHandler());
+//        Test_LoadCorporateWebPage(getDriverHandler());
+//    }
 
-    //The way File.java normalizes the file path, you mustn't add a preceding forward-slash in filepath.
-    @Rule public ScreenShotOnFailRule screenShotOnFail = new ScreenShotOnFailRule("src/main/resources/",getTestName(),getBrowser());
+    private DriverHandler getDriverHandler() {
+        return this.driverHandler;
+    }
 
 
-
-    @Test
     //    Test that Framework can open webpage. The demo webpage will be Vertex Corporate home page.
-    public void Test_LoadCorporateWebPage() {
-
-        this.driverHandler = new DriverHandler(getBrowser());
+    public void Test_LoadCorporateWebPage(DriverHandler driverHandler) {
 
         //Given:
         String expectedURL = "https://www.vertexinc.com/";
-        Page page = new Page(getDriverHandler());
+        Page page = new Page(driverHandler);
 
         //When:
         page.navigateTo(expectedURL);
@@ -50,16 +61,22 @@ public class UseCaseTest {
 
     }//End Test Case
 
-    public DriverHandler getDriverHandler() {
-        return this.driverHandler;
-    }
+    public void Test_LoadCorporateWebPage_Then_Fail(DriverHandler driverHandler) {
 
-    public WebDriver getBrowser() {
-        return browser;
-    }
+        //Given:
+        String expectedURL = "https://www.vertexinc.com/";
+        Page page = new Page(driverHandler);
 
-    public String getTestName(){
-        return this.name.getMethodName();
+        //When:
+        page.navigateTo(expectedURL);
+
+        //Then:
+        String actualURL = page.getCurrentURL();
+
+        Assert.fail("Test will fail!");
+    }//End Test Case
+
+    public static void main(String[] args) {
     }
 }//End MyTestClass
 
