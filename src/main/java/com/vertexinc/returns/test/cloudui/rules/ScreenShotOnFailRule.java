@@ -38,7 +38,7 @@ public class ScreenShotOnFailRule extends TestWatcher {
     private void takeScreenShot(String testName) {
         TakesScreenshot screenshot = (TakesScreenshot) getDriverHandler().getDriver();
         File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
-        File destFile = new File(getOutputDir() + testName + ".jpg");
+        File destFile = new File(getOutputDir() + "/" + testName + ".jpg");
         try {
             FileUtils.copyFile(srcFile, destFile);
         } catch (IOException e) {

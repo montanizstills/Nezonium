@@ -1,15 +1,11 @@
 package com.vertexinc.returns.test.cloudui.util;
 
-import org.apache.commons.io.FileUtils;
-import org.junit.Rule;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.ITestResult;
-
-import java.io.File;
-import java.io.IOException;
 
 /**
  * DriverHandler is a class constructed to make use of `smart waits.` Waiting for elements to be rendered
@@ -43,7 +39,7 @@ public interface DriverHandlerInterface {
         getWait().until(ExpectedConditions.visibilityOf(getElement(by)));
         getWait().until(ExpectedConditions.elementToBeClickable(by));
         getWait().until(ExpectedConditions.not(ExpectedConditions.stalenessOf(getElement(by))));
-      //  getWait().until(ExpectedConditions.visibilityOfAllElements(() -> Page.class.getMethods()));
+        //  getWait().until(ExpectedConditions.visibilityOfAllElements(() -> Page.class.getMethods()));
         return new Select(getElement(by));
     }
 

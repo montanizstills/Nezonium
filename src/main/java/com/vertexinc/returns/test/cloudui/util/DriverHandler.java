@@ -18,13 +18,6 @@ public final class DriverHandler implements DriverHandlerInterface {
                 .pollingEvery(Duration.ofMillis(250))
                 .ignoring(NoSuchElementException.class);
     }
-//    public DriverHandler(final WebDriver driver) {
-//        this.driver = driver;
-//        waitDriver = new FluentWait<>(getDriver())
-//                .withTimeout(Duration.ofMillis(12000))
-//                .pollingEvery(Duration.ofMillis(250))
-//                .ignoring(NoSuchElementException.class);
-//    }
 
     @Override
     public WebDriver getDriver() {
