@@ -2,11 +2,8 @@ package com.vertexinc.returns.test.cloudui.rules;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import org.apache.commons.io.FileUtils;
-import org.junit.rules.MethodRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
-import org.junit.runners.model.FrameworkMethod;
-import org.junit.runners.model.Statement;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +21,7 @@ public class ScreenShotOnFailRule extends TestWatcher {
 //    }
 
     public ScreenShotOnFailRule(String screenShotOutputDir, DriverRule driverRule) {
+        System.out.println("ScreenshotRule object created..");
         this.driverHandler = driverRule.getDriverHandler();
         this.outputDir = screenShotOutputDir;
     }
@@ -42,10 +40,11 @@ public class ScreenShotOnFailRule extends TestWatcher {
     }
 
     private void takeScreenShot(String testName) {
-        TakesScreenshot screenshot = (TakesScreenshot) getDriver();
-        File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
-        File destFile = new File(getOutputDir() + "/" + testName + ".jpg");
+        System.out.println("executing screenshot..");
         try {
+            TakesScreenshot screenshot = (TakesScreenshot) getDriver();
+            File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
+            File destFile = new File(getOutputDir() + "/" + testName + ".jpg");
             FileUtils.copyFile(srcFile, destFile);
             System.out.println("Screenshot captured successfully to `" + getOutputDir() + "`.");
         } catch (IOException e) {
