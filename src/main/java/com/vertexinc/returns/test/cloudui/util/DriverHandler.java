@@ -8,11 +8,12 @@ import java.time.Duration;
 
 public final class DriverHandler implements DriverHandlerInterface {
 
-    private final WebDriver driver;
+    private final Browsers browser;
+    private WebDriver driver;
     private final FluentWait<WebDriver> waitDriver;
 
     public DriverHandler(Browsers browser) {
-        this.driver = browser.getInstance();
+        this.browser = browser;
         waitDriver = new FluentWait<>(getDriver())
                 .withTimeout(Duration.ofMillis(12000))
                 .pollingEvery(Duration.ofMillis(250))
@@ -21,11 +22,23 @@ public final class DriverHandler implements DriverHandlerInterface {
 
     @Override
     public WebDriver getDriver() {
+        if (this.driver == null) {
+            return this.driver = createDriverInstance();
+        }
         return this.driver;
+    }
+
+    private WebDriver createDriverInstance() {
+        return this.browser.getInstance();
     }
 
     @Override
     public FluentWait<WebDriver> getWait() {
         return this.waitDriver;
+    }
+
+    @Override
+    public void destroyDriver() {
+        this.tearDown();
     }
 }

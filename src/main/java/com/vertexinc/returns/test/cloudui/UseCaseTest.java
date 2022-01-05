@@ -1,19 +1,16 @@
 package com.vertexinc.returns.test.cloudui;
 
+import com.vertexinc.returns.test.cloudui.rules.DriverRule;
 import com.vertexinc.returns.test.cloudui.rules.LoggingRule;
 import com.vertexinc.returns.test.cloudui.rules.ScreenShotOnFailRule;
 import com.vertexinc.returns.test.cloudui.rules.UseChromeAsDriverRule;
-import com.vertexinc.returns.test.cloudui.rules.UseEdgeAsDriverRule;
-import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
 import org.junit.After;
-import org.junit.ClassRule;
+import org.junit.Assert;
 import org.junit.Rule;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.*;
+import org.junit.rules.RuleChain;
 
 
 /**
@@ -28,30 +25,29 @@ import org.junit.jupiter.api.Nested;
 @DisplayName("Use Case Test Suite")
 public class UseCaseTest {
 
-    @Nested @DisplayName("Test Chrome Suite")
+    @Nested
+    @DisplayName("Test Chrome Suite")
     class TestChrome {
-        // Order of operations:
-        //1.Specify WebDriver
-        //2. Create Rule(s) that depend on WebDriver;
 
-       DriverHandler driverHandler = new DriverHandler(Browsers.CHROME);
+        LoggingRule loggingRule = new LoggingRule();
+        DriverRule useChromeAsDriverRule = new UseChromeAsDriverRule();
 
         @Rule
-        public LoggingRule loggingRule = new LoggingRule();
-        @ClassRule
-        public UseChromeAsDriverRule useChromeAsDriverRule = new UseChromeAsDriverRule();
-        @Rule
-        public ScreenShotOnFailRule screenShotOnFailRule = new ScreenShotOnFailRule("src/main/resources/chrome", this.driverHandler);
-        //
+        RuleChain ruleChain = RuleChain.emptyRuleChain()
+                .around(loggingRule)
+                .around(useChromeAsDriverRule)
+                .around(new ScreenShotOnFailRule("src/main/resources", useChromeAsDriverRule));
+
+        private final DriverHandler driverHandler = useChromeAsDriverRule.getDriverHandler();
 
         @Test
         public void Test_shouldPass() {
             Assertions.assertTrue(true);
-        }
+        }//^^ Test not tearing down**********
 
 //        @Ignore("shouldFail(), skipped!, Expecting: AssertionError.")
 //        @Test(expected = AssertionError.class)
-//        public void Test_shouldFail() {
+//        public void Test_shouldFail() {a
 //            Assertions.fail();
 //        }
 
@@ -62,10 +58,12 @@ public class UseCaseTest {
             Page page = new Page(getDriverHandler());
             //When:
             page.navigateTo(expectedURL);
+
             //Then:
             String actualURL = page.getCurrentURL();
             Assertions.assertEquals(expectedURL, actualURL);
-        }//End Test Case
+
+        } //^^ Test not tearing down**********
 
         @Test
         public void Test_LoadCorporateWebPage_Then_AssertFail() {
@@ -77,95 +75,103 @@ public class UseCaseTest {
             //Then:
             //String actualURL = page.getCurrentURL();
             Assertions.fail("Test has failed!");
-        }
+        } //^^ Test not tearing down**********
 
-        @After
-        public void tearDown() {
-            if (getDriverHandler().getDriver() != null) {
-                System.out.println("Driver not destroyed after rule, destroying manually - via JUnit @After");
-                getDriverHandler().tearDown();
-            } else {
-                System.out.println("Driver successfully destroyed by rule.");
-            }
+        @Test
+        public void Test_LoadCorporateWebPage_Then_CompareToNullURL() {
+            //Given:
+            String expectedURL = "https://www.vertexinc.com/";
+            Page page = new Page(getDriverHandler());
+            //When:
+            page.navigateTo(expectedURL);
+            //Then:
+            String actualURL = page.getCurrentURL();
+            Assertions.assertEquals(null, actualURL);
         }
 
         public DriverHandler getDriverHandler() {
             return this.driverHandler;
         }
+
+        @AfterEach
+        public void tearDown() {
+            if (getDriverHandler().getDriver() != null) {
+                System.out.println("Driver not destroyed after rule `ScreenShotOnFailRule`, destroying manually - via JUnit @After");
+                getDriverHandler().destroyDriver();
+            } else {
+                System.out.println("Driver successfully destroyed by rule.");
+            }
+
+
+        }
+
 
     }//End TestChrome
+
 ///////////////////////////////////////////////END TEST CHROME//////////////////////////////////////////////////
-
-    @Nested @DisplayName("Test Edge Suite")
-    class TestEdge {
-
-        private DriverHandler driverHandler= new DriverHandler(Browsers.EDGE);
-
-        // Order of operations:
-        //1.Specify WebDriver
-        //2. Create Rule(s) that depend on WebDriver;
-        @Rule
-        public LoggingRule loggingRule = new LoggingRule();
+//
+//    @Nested
+//    @DisplayName("Test Edge Suite")
+//    class TestEdge {
+//        // Order of operations:
+//        //1.Specify WebDriver
+//        //2. Create Rule(s) that depend on WebDriver;
 //        @Rule
-//        public UseEdgeAsDriverRule useEdgeAsDriverRule = new UseEdgeAsDriverRule();
-        @Rule
-        public ScreenShotOnFailRule screenShotOnFailRule = new ScreenShotOnFailRule("src/main/resources/chrome", getDriverHandler()); // Requires a defined WebDriver;
-        //
-
-        @Test
-        public void Test_shouldPass() {
-            Assertions.assertTrue(true);
-        }
-
-//        @Ignore("shouldFail(), skipped!, Expecting: AssertionError.")
-//        @Test(expected = AssertionError.class)
-//        public void Test_shouldFail() {
-//            Assertions.fail();
+//        public LoggingRule loggingRule = new LoggingRule();
+//
+//        @Rule
+//        public ScreenShotOnFailRule screenShotOnFailRule = new ScreenShotOnFailRule("src/main/resources/chrome", driverHandler = new DriverHandler(Browsers.EDGE));
+//        //
+//
+//        @Test
+//        public void Test_shouldPass() {
+//            Assertions.assertTrue(true);
 //        }
-
-        @Test
-        public void Test_LoadCorporateWebPage() {
-            //Given:
-            String expectedURL = "https://www.vertexinc.com/";
-            Page page = new Page(getDriverHandler());
-            //When:
-            page.navigateTo(expectedURL);
-            //Then:
-            String actualURL = page.getCurrentURL();
-            Assertions.assertEquals(expectedURL, actualURL);
-        }//End Test Case
-        //^^ Test Did not tear down.
-
-        @Test
-        public void Test_LoadCorporateWebPage_Then_AssertFail() {
-            //Given:
-            String expectedURL = "https://www.vertexinc.com/";
-            Page page = new Page(getDriverHandler());
-            //When:
-            page.navigateTo(expectedURL);
-            //Then:
-            String actualURL = page.getCurrentURL();
-            Assertions.fail("Test has failed!");
-        }
-
-        @After
-        public void tearDown() {
-            if (getDriverHandler().getDriver() != null) {
-                System.out.println("Driver not destroyed after rule, destroying manually - via JUnit @After");
-                getDriverHandler().tearDown();
-            } else {
-                System.out.println("Driver successfully destroyed by rule.");
-            }
-        }
-
-        public DriverHandler getDriverHandler() {
-            return this.driverHandler;
-        }
-    }//End Test Edge
-    /////////////////////////////////////////////END TEST EDGE/////////////////////////////////////////////
-
-
-
+//
+////        @Ignore("shouldFail(), skipped!, Expecting: AssertionError.")
+////        @Test(expected = AssertionError.class)
+////        public void Test_shouldFail() {
+////            Assertions.fail();
+////        }
+//
+//        @Test
+//        public void Test_LoadCorporateWebPage() {
+//            //Given:
+//            String expectedURL = "https://www.vertexinc.com/";
+//            Page page = new Page(getDriverHandler());
+//            //When:
+//            page.navigateTo(expectedURL);
+//            //Then:
+//            String actualURL = page.getCurrentURL();
+//            Assertions.assertEquals(expectedURL, actualURL);
+//        }//End Test Case
+//        //^^ Test Did not tear down.
+//
+//        @Test
+//        public void Test_LoadCorporateWebPage_Then_AssertFail() {
+//            //Given:
+//            String expectedURL = "https://www.vertexinc.com/";
+//            Page page = new Page(getDriverHandler());
+//            //When:
+//            page.navigateTo(expectedURL);
+//            //Then:
+//            String actualURL = page.getCurrentURL();
+//            Assertions.fail("Test has failed!");
+//        }
+//
+//        @After
+//        public void tearDown() {
+//            if (getDriverHandler().getDriver() != null) {
+//                System.out.println("Driver not destroyed after rule, destroying manually - via JUnit @After");
+//                getDriverHandler().destroyDriver();
+//            } else {
+//                System.out.println("Driver successfully destroyed by rule.");
+//            }
+//        }
+//
+//    }//End Test Edge
+//    /////////////////////////////////////////////END TEST EDGE/////////////////////////////////////////////
+//
 
     public static void main(String[] args) {
     }

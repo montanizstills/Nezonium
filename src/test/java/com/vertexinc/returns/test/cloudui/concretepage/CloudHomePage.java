@@ -10,7 +10,6 @@ public class CloudHomePage extends Page implements CloudHomePage_UIMap {
 
     public CloudHomePage(DriverHandler driverHandler) {
         super(driverHandler);
-
     }
 
     @Override

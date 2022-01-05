@@ -2,8 +2,11 @@ package com.vertexinc.returns.test.cloudui.rules;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import org.apache.commons.io.FileUtils;
+import org.junit.rules.MethodRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
+import org.junit.runners.model.FrameworkMethod;
+import org.junit.runners.model.Statement;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -20,11 +23,15 @@ public class ScreenShotOnFailRule extends TestWatcher {
 //        this.outputDir=outputDir;
 //    }
 
-    public ScreenShotOnFailRule(String screenShotOutputDir, DriverHandler driverHandler) {
-        this.driverHandler = driverHandler;
+    public ScreenShotOnFailRule(String screenShotOutputDir, DriverRule driverRule) {
+        this.driverHandler = driverRule.getDriverHandler();
         this.outputDir = screenShotOutputDir;
     }
 
+    @Override
+    public void finished(Description description) {
+        getDriverHandler().tearDown();
+    }
 
     @Override
     public void failed(Throwable throwable, Description description) {
@@ -32,30 +39,22 @@ public class ScreenShotOnFailRule extends TestWatcher {
         System.out.println("Screenshot initiated!");
         String screenShotName = description.getMethodName();
         takeScreenShot(screenShotName);
-
     }
 
     private void takeScreenShot(String testName) {
-        TakesScreenshot screenshot = (TakesScreenshot) getDriverHandler().getDriver();
+        TakesScreenshot screenshot = (TakesScreenshot) getDriver();
         File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
         File destFile = new File(getOutputDir() + "/" + testName + ".jpg");
         try {
             FileUtils.copyFile(srcFile, destFile);
+            System.out.println("Screenshot captured successfully to `" + getOutputDir() + "`.");
         } catch (IOException e) {
             throw new Error(e);
         }
         //logger.atDebug({},Screenshot successfully captured!)
     }
 
-    @Override
-    public void finished(Description description) {
-        if (getDriver() != null) {
-            getDriver().quit();
-        }
-
-    }
-
-    public WebDriver getDriver() {
+    private WebDriver getDriver() {
         return this.driverHandler.getDriver();
     }
 
@@ -63,8 +62,9 @@ public class ScreenShotOnFailRule extends TestWatcher {
         return this.outputDir;
     }
 
-    public DriverHandler getDriverHandler() {
+    private DriverHandler getDriverHandler() {
         return driverHandler;
     }
+
 
 }

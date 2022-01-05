@@ -11,7 +11,19 @@ public interface PageInterface {
      **/
 
     default String getCurrentURL() {
-        return getDriverHandler().getDriver().getCurrentUrl();
+        return getDriverHandler().getCurrentUrl();
+    }
+
+    default void clickBackButton(){
+        getDriverHandler().clickBackButton();
+    }
+
+    default void clickForwardButton(){
+        getDriverHandler().clickForwardButton();
+    }
+
+    default void clickRefreshButton(){
+        getDriverHandler().clickRefreshButton();
     }
 
     default void navigateTo(String url) {

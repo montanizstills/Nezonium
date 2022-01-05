@@ -2,25 +2,34 @@ package com.vertexinc.returns.test.cloudui.rules;
 
 import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
-import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
-public class UseChromeAsDriverRule implements TestRule {
+public final class UseChromeAsDriverRule implements DriverRule {
 
-//    private final DriverHandler driverHandler = new DriverHandler(Browsers.CHROME);
+    private final DriverHandler driverHandler;
 
-
-    public UseChromeAsDriverRule() {}
+    public UseChromeAsDriverRule() {
+        this.driverHandler = new DriverHandler(getBrowser());
+    }
 
     @Override
     public Statement apply(Statement statement, Description description) {
         return new Statement() {
             @Override
             public void evaluate() throws Throwable {
-                DriverHandler driverHandler = new DriverHandler(Browsers.CHROME);
                 statement.evaluate();
             }
         };
+    }
+
+    @Override
+    public Browsers getBrowser() {
+        return Browsers.CHROME;
+    }
+
+    @Override
+    public DriverHandler getDriverHandler() {
+        return this.driverHandler;
     }
 }

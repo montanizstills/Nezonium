@@ -76,4 +76,8 @@ public interface DriverHandlerInterface {
         if (getDriver() != null)
             getDriver().quit();
     }
+
+    default void destroyDriver(){
+        this.tearDown();
+    };
 }
