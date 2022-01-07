@@ -20,11 +20,6 @@ public class ScreenShotOnFailRule implements TestWatcher {
 //        this.outputDir=outputDir;
 //    }
 
-    public ScreenShotOnFailRule(String screenShotOutputDir, DriverRule driverRule) {
-        this.driverHandler = driverRule.getDriverHandler();
-        this.outputDir = screenShotOutputDir;
-    }
-
     public ScreenShotOnFailRule(String screenShotOutputDir, DriverHandler driverHandler) {
         this.driverHandler = driverHandler;
         this.outputDir = screenShotOutputDir;

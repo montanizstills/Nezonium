@@ -1,11 +1,11 @@
 package com.vertexinc.returns.test.cloudui;
 
+import com.vertexinc.returns.test.cloudui.rules.LoggingRule;
 import com.vertexinc.returns.test.cloudui.rules.ScreenShotOnFailRule;
 import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 
@@ -21,19 +21,20 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 @DisplayName("Use Case Test Suite")
 public class UseCaseTest {
 
+    //Pass set of rules to each test.
+    //Unpack rule chain or dynamic test?
+    //Chrome is a test class?
+
     private DriverHandler driverHandler;
+
+    @RegisterExtension
+    ScreenShotOnFailRule screenShotOnFailRule = new ScreenShotOnFailRule("src/main/resources/chrome", driverHandler = new DriverHandler(Browsers.CHROME));
+//    @RegisterExtension
+//    LoggingRule LoggingRule = new LoggingRule(currentStament);
 
     @Nested
     @DisplayName("Test Chrome Suite")
     class TestChrome {
-
-//        @BeforeEach
-//        public void setup() {
-//            driverHandler = new DriverHandler(Browsers.CHROME);
-//        }
-
-        @RegisterExtension
-        ScreenShotOnFailRule screenShotOnFailRule = new ScreenShotOnFailRule("src/main/resources/chrome", driverHandler = new DriverHandler(Browsers.CHROME));
 
         @Test
         public void Test_shouldPass() {
@@ -87,7 +88,7 @@ public class UseCaseTest {
             Assertions.assertNull(actualURL);
         }
 
-//        @AfterEach
+        //                @AfterEach  - Update method to tear down properly after test failure
         public void tearDown() {
             if (getDriverHandler().getDriver() != null) {
                 System.out.println("Driver not destroyed after rule `ScreenShotOnFailRule`, destroying manually - via JUnit @After");
@@ -104,78 +105,68 @@ public class UseCaseTest {
     }
 
 ///////////////////////////////////////////////END TEST CHROME//////////////////////////////////////////////////
-//
-//    @Nested
-//    @DisplayName("Test Edge Suite")
-//    class TestEdge {
-//        @Rule
-//        public LoggingRule loggingRule = new LoggingRule();
-//        @Rule
-//        public DriverRule useEdgeAsDriverRule = new UseEdgeAsDriverRule();
-//        @Rule
-//        public ScreenShotOnFailRule screenShotOnFailRule = new ScreenShotOnFailRule("src/main/resources/chrome", useEdgeAsDriverRule);
-//
-//        private final DriverHandler driverHandler = useEdgeAsDriverRule.getDriverHandler();
-//
-//
-//        @Test
-//        public void Test_shouldPass() {
-//            Assertions.assertTrue(true);
-//        }
-//
-//        @Disabled("shouldFail(), skipped!, Expecting: AssertionError.")
-//        @Test
-//        public void Test_shouldFail() {
-//            //Given:
-//            AssertionError assertionError;
-//            String assertionErrorMessage = "Assertion error thrown in Edge Suite - Test: shouldFail()..";
-//            //When:
-//            assertionError = Assertions.assertThrows(AssertionError.class, Assertions::fail, assertionErrorMessage);
-//            //Then:
-//            Assertions.assertEquals(assertionErrorMessage,assertionError.getMessage());
-//        }//^^Test not tearing down..
-//
-//        @Test
-//        public void Test_LoadCorporateWebPage() {
-//            //Given:
-//            String expectedURL = "https://www.vertexinc.com/";
-//            Page page = new Page(getDriverHandler());
-//            //When:
-//            page.navigateTo(expectedURL);
-//            //Then:
-//            String actualURL = page.getCurrentURL();
-//            Assertions.assertEquals(expectedURL, actualURL);
-//        }//End Test Case
-//        //^^ Test Did not tear down.
-//
-//        @Test
-//        public void Test_LoadCorporateWebPage_Then_AssertFail() {
-//            //Given:
-//            String expectedURL = "https://www.vertexinc.com/";
-//            Page page = new Page(getDriverHandler());
-//            //When:
-//            page.navigateTo(expectedURL);
-//            //Then:
-//            String actualURL = page.getCurrentURL();
-//            Assertions.fail("Test has failed!");
-//        }
-//
-//        public DriverHandler getDriverHandler() {
-//            return this.driverHandler;
-//        }
-//
-//        @AfterEach
-//        public void tearDown() {
-//            if (getDriverHandler().getDriver() != null) {
-//                System.out.println("Driver not destroyed after rule `ScreenShotOnFailRule`, destroying manually - via JUnit @After");
-//                getDriverHandler().destroyDriver();
-//            } else {
-//                System.out.println("Driver successfully destroyed by rule.");
-//            }
-//        }
-//
-//    }//End Test Edge
-//    /////////////////////////////////////////////END TEST EDGE/////////////////////////////////////////////
+
+    @Nested
+    @DisplayName("Test Edge Suite")
+    class TestEdge {
+
+        @RegisterExtension
+        ScreenShotOnFailRule screenShotOnFailRule = new ScreenShotOnFailRule("src/main/resources/edge", driverHandler = new DriverHandler(Browsers.EDGE));
+
+        @Test
+        public void Test_shouldPass() {
+            Assertions.assertTrue(true);
+        }
+
+        @Disabled("shouldFail(), skipped!, Expecting: AssertionError.")
+        @Test
+        public void Test_shouldFail() {
+            //Given:
+            AssertionError assertionError;
+            String assertionErrorMessage = "Assertion error thrown in Edge Suite - Test: shouldFail()..";
+            //When:
+            assertionError = Assertions.assertThrows(AssertionError.class, Assertions::fail, assertionErrorMessage);
+            //Then:
+            Assertions.assertEquals(assertionErrorMessage, assertionError.getMessage());
+        }//^^Test not tearing down..
+
+        @Test
+        public void Test_LoadCorporateWebPage() {
+            //Given:
+            String expectedURL = "https://www.vertexinc.com/";
+            Page page = new Page(getDriverHandler());
+            //When:
+            page.navigateTo(expectedURL);
+            //Then:
+            String actualURL = page.getCurrentURL();
+            Assertions.assertEquals(expectedURL, actualURL);
+        }//End Test Case
+        //^^ Test Did not tear down.
+
+        @Test
+        public void Test_LoadCorporateWebPage_Then_AssertFail() {
+            //Given:
+            String expectedURL = "https://www.vertexinc.com/";
+            Page page = new Page(getDriverHandler());
+            //When:
+            page.navigateTo(expectedURL);
+            //Then:
+            String actualURL = page.getCurrentURL();
+            Assertions.fail("Test has failed!");
+        }
+
+        //        @AfterEach  - Update method to tear down properly after test failure
+        public void tearDown() {
+            if (getDriverHandler().getDriver() != null) {
+                System.out.println("Driver not destroyed after rule `ScreenShotOnFailRule`, destroying manually - via JUnit @After");
+                getDriverHandler().destroyDriver();
+            } else {
+                System.out.println("Driver successfully destroyed by rule.");
+            }
+        }
+
+    }//End Test Edge
+    /////////////////////////////////////////////END TEST EDGE/////////////////////////////////////////////
 
 
     public static void main(String[] args) {
