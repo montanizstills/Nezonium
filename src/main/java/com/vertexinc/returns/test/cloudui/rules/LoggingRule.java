@@ -1,16 +1,22 @@
 package com.vertexinc.returns.test.cloudui.rules;
 
-import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
-import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.TestInstance;
 
 import java.util.logging.Logger;
 
+@TestInstance(value = TestInstance.Lifecycle.PER_CLASS)
+public class LoggingRule {
+    private static final Logger logger = Logger.getLogger(LoggingRule.class.getName());
 
-public class LoggingRule implements BeforeTestExecutionCallback {
-    private Logger logger;
+    @BeforeAll
+    void beforeAllTests() {
+        logger.info("Preparing testing environment");
+    }
 
-    @Override
-    public void beforeTestExecution(ExtensionContext extensionContext) throws Exception {
-
+    @AfterAll
+    void afterAllTest(){
+        logger.info("All test have been executed!");
     }
 }

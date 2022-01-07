@@ -22,8 +22,9 @@ public class UseEdgeAsDriverRule implements DriverRule {
         return this.driverHandler;
     }
 
+
     @Override
-    public void beforeEach(ExtensionContext extensionContext) throws Exception {
+    public void beforeAll(ExtensionContext extensionContext) throws Exception {
 
     }
 }
