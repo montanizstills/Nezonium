@@ -1,23 +1,16 @@
 package com.vertexinc.returns.test.cloudui.rules;
 
-import org.junit.rules.TestRule;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
+import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
+import org.junit.jupiter.api.extension.ExtensionContext;
 
 import java.util.logging.Logger;
 
 
-public class LoggingRule implements TestRule {
+public class LoggingRule implements BeforeTestExecutionCallback {
     private Logger logger;
 
     @Override
-    public Statement apply(Statement statement, Description description) {
-        return new Statement() {
-            @Override
-            public void evaluate() throws Throwable {
-                logger = Logger.getLogger(description.getTestClass().getName()+"."+description.getDisplayName());
-                statement.evaluate();
-            }
-        };
+    public void beforeTestExecution(ExtensionContext extensionContext) throws Exception {
+
     }
 }

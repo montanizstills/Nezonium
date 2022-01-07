@@ -2,8 +2,7 @@ package com.vertexinc.returns.test.cloudui.rules;
 
 import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
+import org.junit.jupiter.api.extension.ExtensionContext;
 
 public class UseEdgeAsDriverRule implements DriverRule {
 
@@ -14,18 +13,6 @@ public class UseEdgeAsDriverRule implements DriverRule {
     }
 
     @Override
-    public Statement apply(Statement statement, Description description) {
-
-        return new Statement() {
-            @Override
-            public void evaluate() throws Throwable {
-                DriverHandler driverHandler = new DriverHandler(Browsers.EDGE);
-                statement.evaluate();
-            }
-        };
-    }
-
-    @Override
     public Browsers getBrowser() {
         return Browsers.EDGE;
     }
@@ -33,5 +20,10 @@ public class UseEdgeAsDriverRule implements DriverRule {
     @Override
     public DriverHandler getDriverHandler() {
         return this.driverHandler;
+    }
+
+    @Override
+    public void beforeEach(ExtensionContext extensionContext) throws Exception {
+
     }
 }

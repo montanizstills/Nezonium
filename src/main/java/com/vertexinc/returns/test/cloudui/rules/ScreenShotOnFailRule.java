@@ -2,8 +2,8 @@ package com.vertexinc.returns.test.cloudui.rules;
 
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import org.apache.commons.io.FileUtils;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.io.IOException;
 
-public class ScreenShotOnFailRule extends TestWatcher {
+public class ScreenShotOnFailRule implements TestWatcher {
 
     private final DriverHandler driverHandler;
     private final String outputDir;
@@ -21,32 +21,34 @@ public class ScreenShotOnFailRule extends TestWatcher {
 //    }
 
     public ScreenShotOnFailRule(String screenShotOutputDir, DriverRule driverRule) {
-        System.out.println("ScreenshotRule object created..");
         this.driverHandler = driverRule.getDriverHandler();
         this.outputDir = screenShotOutputDir;
     }
 
-    @Override
-    public void finished(Description description) {
-        getDriverHandler().tearDown();
+    public ScreenShotOnFailRule(String screenShotOutputDir, DriverHandler driverHandler) {
+        this.driverHandler = driverHandler;
+        this.outputDir = screenShotOutputDir;
     }
 
     @Override
-    public void failed(Throwable throwable, Description description) {
-        System.out.println("This test has failed!");
-        System.out.println("Screenshot initiated!");
-        String screenShotName = description.getMethodName();
-        takeScreenShot(screenShotName);
+    public void testFailed(ExtensionContext context, Throwable cause) {
+        takeScreenShot(context.getDisplayName());
+//        TestWatcher.super.testFailed(context);
     }
+
+    @Override
+    public void testSuccessful(ExtensionContext context) {
+        System.out.println("Test succeeded! Ignoring screenshot..");
+//        TestWatcher.super.testSuccessful(context);
+    }
+
 
     private void takeScreenShot(String testName) {
-        System.out.println("executing screenshot..");
         try {
             TakesScreenshot screenshot = (TakesScreenshot) getDriver();
             File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
             File destFile = new File(getOutputDir() + "/" + testName + ".jpg");
             FileUtils.copyFile(srcFile, destFile);
-            System.out.println("Screenshot captured successfully to `" + getOutputDir() + "`.");
         } catch (IOException e) {
             throw new Error(e);
         }
@@ -54,7 +56,7 @@ public class ScreenShotOnFailRule extends TestWatcher {
     }
 
     private WebDriver getDriver() {
-        return this.driverHandler.getDriver();
+        return getDriverHandler().getDriver();
     }
 
     public String getOutputDir() {
@@ -62,7 +64,7 @@ public class ScreenShotOnFailRule extends TestWatcher {
     }
 
     private DriverHandler getDriverHandler() {
-        return driverHandler;
+        return this.driverHandler;
     }
 
 
