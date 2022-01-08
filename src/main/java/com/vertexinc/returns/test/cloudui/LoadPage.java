@@ -18,13 +18,14 @@ import org.junit.jupiter.params.provider.EnumSource;
  **/
 
 //    Test that Framework can open webpage. The demo webpage will be Vertex Corporate home page.
-@DisplayName("Use Case Test Suite")
-public class UseCaseTest {
+@DisplayName("Load-Page Test Suite")
+public class LoadPage {
     //Pass set of rules to each test.
     //Unpack rule chain or dynamic test?
     //Chrome is a test class?
 //    @Browser(webdriver=Browsers.CHROME)
-    @ParameterizedTest
+    @ParameterizedTest(name = "Test Load Corporate WebPage with {arguments}")
+//    @ParameterizedTest
     @EnumSource(value = Browsers.class, mode = EnumSource.Mode.INCLUDE, names = {"CHROME"}) //@ScreenShotOnFail
     public void Test_LoadCorporateWebPage(Browsers browser) {
         //Given:
@@ -43,7 +44,6 @@ public class UseCaseTest {
 //    @RegisterExtension
 
 //    LoggingRule LoggingRule = new LoggingRule();
-
 
 
 //
