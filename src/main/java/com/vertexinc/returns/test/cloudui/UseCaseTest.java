@@ -25,7 +25,7 @@ public class UseCaseTest {
     //Chrome is a test class?
 //    @Browser(webdriver=Browsers.CHROME)
     @ParameterizedTest
-    @EnumSource(value = Browsers.class, mode = EnumSource.Mode.EXCLUDE, names = {"SAFARI", "OPERA", "INTERNET_EXPLORER"})
+    @EnumSource(value = Browsers.class, mode = EnumSource.Mode.INCLUDE, names = {"CHROME"}) //@ScreenShotOnFail
     public void Test_LoadCorporateWebPage(Browsers browser) {
         //Given:
         String expectedURL = "https://www.vertexinc.com/";

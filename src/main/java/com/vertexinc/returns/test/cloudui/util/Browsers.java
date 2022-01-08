@@ -5,6 +5,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -14,7 +15,10 @@ import java.util.function.Supplier;
 
 public enum Browsers {
 
-//    FIREFOX(WebDriverManager.firefoxdriver().driverVersion().browserVersion()::firefoxdriver, FirefoxDriver::new),
+    FIREFOX(WebDriverManager::firefoxdriver, () -> {
+        WebDriverManager.firefoxdriver().setup();
+        return new FirefoxDriver();
+    }),
     CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
     OPERA(WebDriverManager::operadriver, OperaDriver::new),
     INTERNET_EXPLORER(WebDriverManager::iedriver, InternetExplorerDriver::new),//IE Test(s) not tearing down.
