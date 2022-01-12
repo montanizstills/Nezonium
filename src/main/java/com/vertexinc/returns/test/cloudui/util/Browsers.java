@@ -12,13 +12,8 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.function.Supplier;
 
-
 public enum Browsers {
-
-    FIREFOX(WebDriverManager::firefoxdriver, () -> {
-        WebDriverManager.firefoxdriver().setup();
-        return new FirefoxDriver();
-    }),
+    FIREFOX(WebDriverManager::firefoxdriver, FirefoxDriver::new),
     CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
     OPERA(WebDriverManager::operadriver, OperaDriver::new),
     INTERNET_EXPLORER(WebDriverManager::iedriver, InternetExplorerDriver::new),//IE Test(s) not tearing down.
@@ -33,7 +28,7 @@ public enum Browsers {
         this.webDriverSupplier = webDriverSupplier;
     }
 
-    private Supplier<WebDriverManager> getWebDriverManagerSupplier() {
+    public Supplier<WebDriverManager> getWebDriverManagerSupplier() {
         return this.webDriverManagerSupplier;
     }
 
@@ -45,7 +40,5 @@ public enum Browsers {
         getWebDriverManagerSupplier().get().setup();
         return getWebDriverSupplier().get();
     }
-
-
 }
 
