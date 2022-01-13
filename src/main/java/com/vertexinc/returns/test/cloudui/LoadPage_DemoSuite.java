@@ -7,7 +7,6 @@ import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.openqa.selenium.WebDriver;
 
 
@@ -39,7 +38,7 @@ public class LoadPage_DemoSuite {
 //    @ArgumentsSource(DriverProvider.class)
 //    @Test
     @ScreenShotOnFail
-    @UseDriver(browser = {Browsers.FIREFOX})
+    @UseDriver(browser = {Browsers.CHROME})
     public void Test_LoadCorporateWebPage(WebDriver driver) {
         //Given:
         String expectedURL = "https://www.vertexinc.com/";
