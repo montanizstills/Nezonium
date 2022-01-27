@@ -5,9 +5,15 @@ import com.vertexinc.returns.test.cloudui.annotations.UseDriver;
 import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
+import io.github.bonigarcia.seljup.EnabledIfBrowserAvailable;
+import io.github.bonigarcia.seljup.SeleniumJupiter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIf;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.openqa.selenium.WebDriver;
 
 
@@ -22,32 +28,28 @@ import org.openqa.selenium.WebDriver;
 //    Test that Framework can open webpage. The demo webpage will be Vertex Corporate home page.
 @DisplayName("Load-Page Test Suite")
 public class LoadPage_DemoSuite {
-
-//    @RegisterExtension
-//    SeleniumJupiter seleniumJupiter = new SeleniumJupiter();
-//
-//    @BeforeEach
-//        //@ScreenShotOnFail(outputDir="",outputFileType="") //@ScreenShot(always=true,outputDir="",outputFileType="")
-//    void setupScreenShotRules() {
-//        seleniumJupiter.getConfig().setManager(Browsers.FIREFOX.getWebDriverManagerSupplier().get());
-//        seleniumJupiter.getConfig().enableScreenshotWhenFailure();
-//        seleniumJupiter.getConfig().setScreenshotFormat("png");
-//        seleniumJupiter.getConfig().setOutputFolder("src/main/resources");
-//    }
+    @RegisterExtension
+    public static SeleniumJupiter selJup = new SeleniumJupiter();
 
 //    @ParameterizedTest(name = "Executing Test: {displayName} with {arguments}")
 //    @ArgumentsSource(DriverProvider.class)
-    @Test
-//    @ScreenShotOnFail
-    @UseDriver(browser = Browsers.FIREFOX)
-    public void Test_LoadCorporateWebPage(WebDriver driver) {
-        //Given:
-        String expectedURL = "https://www.vertexinc.com/";
-        Page page = new Page(new DriverHandler(driver));
-        //When:
-        page.navigateTo(expectedURL);
-        //Then:
-        String actualURL = page.getCurrentURL();
-        Assertions.assertEquals(expectedURL, actualURL);
+    @Test @UseDriver(browser = Browsers.CHROME)
+    public void getVertexHomePage(WebDriver driver){
+        //Situation: I open Vertex Corporate Home Page
+        //[
+        //Given a url with value "{value}"
+        String url = "https://vertexinc.com";
+
+        //When I open a webpage and navigate to the url
+        Page myTestPage = new Page(new DriverHandler(driver));
+        myTestPage.navigateTo(url);
+
+        //When...
+        //When...
+
+        //Then the current browser url should be {value}
+        String currentURL = myTestPage.getCurrentURL();
+        Assertions.assertEquals(url,currentURL);
+        //]
     }
 }

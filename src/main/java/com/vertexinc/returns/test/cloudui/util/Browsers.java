@@ -1,4 +1,3 @@
-
 package com.vertexinc.returns.test.cloudui.util;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
