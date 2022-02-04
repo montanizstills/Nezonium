@@ -1,20 +1,16 @@
 package com.vertexinc.returns.test.cloudui;
 
-import com.vertexinc.returns.test.cloudui.annotations.ScreenShotOnFail;
 import com.vertexinc.returns.test.cloudui.annotations.UseDriver;
 import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
-import io.github.bonigarcia.seljup.EnabledIfBrowserAvailable;
-import io.github.bonigarcia.seljup.SeleniumJupiter;
+import com.vertexinc.returns.test.cloudui.util.SeleniumJupiterProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.EnabledIf;
-import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.junit.jupiter.api.condition.OS;
-import org.junit.jupiter.api.extension.RegisterExtension;
 import org.openqa.selenium.WebDriver;
+
+import java.util.Map;
 
 
 /**
@@ -28,17 +24,18 @@ import org.openqa.selenium.WebDriver;
 //    Test that Framework can open webpage. The demo webpage will be Vertex Corporate home page.
 @DisplayName("Load-Page Test Suite")
 public class LoadPage_DemoSuite {
-    @RegisterExtension
-    public static SeleniumJupiter selJup = new SeleniumJupiter();
 
-//    @ParameterizedTest(name = "Executing Test: {displayName} with {arguments}")
+    public static SeleniumJupiterProvider seleniumJupiterProvider = new SeleniumJupiterProvider();
+
+    //    @ParameterizedTest(name = "Executing Test: {displayName} with {arguments}")
 //    @ArgumentsSource(DriverProvider.class)
-    @Test @UseDriver(browser = Browsers.CHROME)
-    public void getVertexHomePage(WebDriver driver){
+    @Test
+    @UseDriver(browser = Browsers.CHROME)
+    public void getVertexHomePage(WebDriver driver) {
         //Situation: I open Vertex Corporate Home Page
         //[
         //Given a url with value "{value}"
-        String url = "https://vertexinc.com";
+        String url = "https://www.vertexinc.com/";
 
         //When I open a webpage and navigate to the url
         Page myTestPage = new Page(new DriverHandler(driver));
@@ -49,7 +46,26 @@ public class LoadPage_DemoSuite {
 
         //Then the current browser url should be {value}
         String currentURL = myTestPage.getCurrentURL();
-        Assertions.assertEquals(url,currentURL);
+        Assertions.assertEquals(url, currentURL);
         //]
     }
+
+//    @Test
+//    @UseDriver(browser = Browsers.CHROME)
+//    public void Test_SendStringsToUsernameField(WebDriver webDriver @TestParameterInput List<String>stringsToEnterIntoUsernameField) {
+//        test_sendStringsToUsernameField(stringsToEnterIntoUsernameField);
+//    }
+//
+//    @Test
+//    @UseDriver(browser = Browsers.CHROME)
+//    public void Test_SendStringsToPasswordField(WebDriver webDriver @TestParameterInput List<String>stringsToEnterIntoPasswordField) {
+//    }
+//
+//    @Test
+//    @UseDriver(browser = Browsers.CHROME)
+//    //Map of username/password pairs. Some should be valid users. actors.put("vertuser2@vertex.local","******")
+//    public void Test_LoginWithDifferentActors(WebDriver webDriver, @TestParameterInput Map<String, String> actors) {
+//    }
+
+
 }
