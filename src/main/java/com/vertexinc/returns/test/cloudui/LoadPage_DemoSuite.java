@@ -1,16 +1,15 @@
 package com.vertexinc.returns.test.cloudui;
 
+import com.vertexinc.returns.test.cloudui.annotations.ScreenShotOnFail;
 import com.vertexinc.returns.test.cloudui.annotations.UseDriver;
 import com.vertexinc.returns.test.cloudui.util.Browsers;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
-import com.vertexinc.returns.test.cloudui.util.SeleniumJupiterProvider;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-
-import java.util.Map;
 
 
 /**
@@ -25,20 +24,19 @@ import java.util.Map;
 @DisplayName("Load-Page Test Suite")
 public class LoadPage_DemoSuite {
 
-    public static SeleniumJupiterProvider seleniumJupiterProvider = new SeleniumJupiterProvider();
-
-    //    @ParameterizedTest(name = "Executing Test: {displayName} with {arguments}")
+//
 //    @ArgumentsSource(DriverProvider.class)
-    @Test
-    @UseDriver(browser = Browsers.CHROME)
-    public void getVertexHomePage(WebDriver driver) {
-        //Situation: I open Vertex Corporate Home Page
-        //[
-        //Given a url with value "{value}"
-        String url = "https://www.vertexinc.com/";
 
-        //When I open a webpage and navigate to the url
-        Page myTestPage = new Page(new DriverHandler(driver));
+    @UseDriver(browser = {Browsers.CHROME,Browsers.EDGE})
+    @ScreenShotOnFail(screenshotOutputDir = ScreenShotOnFail.CHROME_DIR_DEFAULT)
+    public void should_Open_GoogleSearchEngine_Page(Browsers browsers) {
+        //Situation-Scenario: I open Google search page.
+        //[
+        //Given an url with value "{value}."
+        String url = "https://www.google.com/";
+
+        //When I open a webpage and navigate to the url.
+        Page myTestPage = new Page(new DriverHandler(browsers));
         myTestPage.navigateTo(url);
 
         //When...
@@ -50,22 +48,4 @@ public class LoadPage_DemoSuite {
         //]
     }
 
-//    @Test
-//    @UseDriver(browser = Browsers.CHROME)
-//    public void Test_SendStringsToUsernameField(WebDriver webDriver @TestParameterInput List<String>stringsToEnterIntoUsernameField) {
-//        test_sendStringsToUsernameField(stringsToEnterIntoUsernameField);
-//    }
-//
-//    @Test
-//    @UseDriver(browser = Browsers.CHROME)
-//    public void Test_SendStringsToPasswordField(WebDriver webDriver @TestParameterInput List<String>stringsToEnterIntoPasswordField) {
-//    }
-//
-//    @Test
-//    @UseDriver(browser = Browsers.CHROME)
-//    //Map of username/password pairs. Some should be valid users. actors.put("vertuser2@vertex.local","******")
-//    public void Test_LoginWithDifferentActors(WebDriver webDriver, @TestParameterInput Map<String, String> actors) {
-//    }
-
-
-}
+}//End MainApplication
