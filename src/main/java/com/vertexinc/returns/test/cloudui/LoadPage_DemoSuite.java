@@ -36,7 +36,7 @@ public class LoadPage_DemoSuite {
         String url = "https://www.google.com/";
 
         //When I open a webpage and navigate to the url.
-        Page myTestPage = new Page(new DriverHandler(SeleniumJupiterProvider.getInstance().getConfig().getManager().getWebDriver()));
+        Page myTestPage = new Page(new DriverHandler());
         myTestPage.navigateTo(url);
 
         //When...
