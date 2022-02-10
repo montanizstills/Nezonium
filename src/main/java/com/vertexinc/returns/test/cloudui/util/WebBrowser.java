@@ -11,7 +11,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.function.Supplier;
 
-public enum Browsers {
+public enum WebBrowser {
     FIREFOX(WebDriverManager::firefoxdriver, FirefoxDriver::new),
     CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
     OPERA(WebDriverManager::operadriver, OperaDriver::new),
@@ -22,7 +22,7 @@ public enum Browsers {
     private final Supplier<WebDriver> webDriverSupplier;
     private final Supplier<WebDriverManager> webDriverManagerSupplier;
 
-    Browsers(Supplier<WebDriverManager> webDriverManagerSupplier, Supplier<WebDriver> webDriverSupplier) {
+    WebBrowser(Supplier<WebDriverManager> webDriverManagerSupplier, Supplier<WebDriver> webDriverSupplier) {
         this.webDriverManagerSupplier = webDriverManagerSupplier;
         this.webDriverSupplier = webDriverSupplier;
     }

@@ -2,10 +2,11 @@ package com.vertexinc.returns.test.cloudui;
 
 import com.vertexinc.returns.test.cloudui.annotations.ScreenShotOnFail;
 import com.vertexinc.returns.test.cloudui.annotations.UseDriver;
-import com.vertexinc.returns.test.cloudui.util.Browsers;
+import com.vertexinc.returns.test.cloudui.util.WebBrowser;
 import com.vertexinc.returns.test.cloudui.util.DriverHandler;
 import com.vertexinc.returns.test.cloudui.util.Page;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.vertexinc.returns.test.cloudui.util.SeleniumJupiterProvider;
+import io.github.bonigarcia.seljup.SeleniumJupiter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -24,19 +25,18 @@ import org.openqa.selenium.WebDriver;
 @DisplayName("Load-Page Test Suite")
 public class LoadPage_DemoSuite {
 
-//
-//    @ArgumentsSource(DriverProvider.class)
 
-    @UseDriver(browser = {Browsers.CHROME,Browsers.EDGE})
+    @UseDriver(browser = {WebBrowser.CHROME, WebBrowser.EDGE})
     @ScreenShotOnFail(screenshotOutputDir = ScreenShotOnFail.CHROME_DIR_DEFAULT)
-    public void should_Open_GoogleSearchEngine_Page(Browsers browsers) {
+    public void should_Open_GoogleSearchEngine_Page(WebBrowser webBrowser) {
+        SeleniumJupiterProvider.setUp(webBrowser);
         //Situation-Scenario: I open Google search page.
         //[
         //Given an url with value "{value}."
         String url = "https://www.google.com/";
 
         //When I open a webpage and navigate to the url.
-        Page myTestPage = new Page(new DriverHandler(browsers));
+        Page myTestPage = new Page(new DriverHandler(SeleniumJupiterProvider.getInstance().getConfig().getManager().getWebDriver()));
         myTestPage.navigateTo(url);
 
         //When...
@@ -47,5 +47,9 @@ public class LoadPage_DemoSuite {
         Assertions.assertEquals(url, currentURL);
         //]
     }
+    @AfterEach
+    void stop(){
+        SeleniumJupiterProvider.getInstance().getConfig().getManager().quit();
+    } //try tear down without explicit @AfterEach
 
 }//End MainApplication

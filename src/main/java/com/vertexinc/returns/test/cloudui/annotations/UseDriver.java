@@ -1,7 +1,7 @@
 package com.vertexinc.returns.test.cloudui.annotations;
 
-import com.vertexinc.returns.test.cloudui.util.Browsers;
-import com.vertexinc.returns.test.cloudui.util.annotationutils.DriverArgumentsProvider;
+import com.vertexinc.returns.test.cloudui.util.WebBrowser;
+import com.vertexinc.returns.test.cloudui.util.annotationutils.WebBrowserArgumentsProvider;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
@@ -13,11 +13,10 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 //@Documented - denotes API documentation will be cascaded
-//@Inherited - denotes if subclasses will inherit annotations.
+//@Inherited - denotes if subclasses will inherit super's annotations.
 @ParameterizedTest(name = "Executing with {argumentsWithNames} - {displayName}")
-@ArgumentsSource(DriverArgumentsProvider.class)
-//@ExtendWith({DriverProvider.class}) @Test
+@ArgumentsSource(WebBrowserArgumentsProvider.class)
 public @interface UseDriver {
-    Browsers[] browser(); //default Browsers.CHROME;
+    WebBrowser[] browser();
 
 }
