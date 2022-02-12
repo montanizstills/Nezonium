@@ -31,13 +31,14 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.1.1</version>
+<!--            4.1.2 not supported-->
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>ru.yandex.qatools.ashot</groupId>-->
-<!--            <artifactId>ashot</artifactId>-->
-<!--            <version>1.5.4</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.4</version>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>

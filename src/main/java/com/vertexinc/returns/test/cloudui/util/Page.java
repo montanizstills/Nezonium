@@ -4,8 +4,8 @@ public class Page implements PageInterface {
 
     private final DriverHandler driverHandler;
 
-    public Page(final DriverHandler driverHandler) {
-        this.driverHandler = driverHandler;
+    public Page() {
+        this.driverHandler = new DriverHandler();
     }
 
     @Override

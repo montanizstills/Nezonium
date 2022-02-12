@@ -15,7 +15,8 @@ public enum WebBrowser {
     FIREFOX(WebDriverManager::firefoxdriver, FirefoxDriver::new),
     CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
     OPERA(WebDriverManager::operadriver, OperaDriver::new),
-    INTERNET_EXPLORER(WebDriverManager::iedriver, InternetExplorerDriver::new),//IE Test(s) not tearing down.
+    @Deprecated
+    INTERNET_EXPLORER(WebDriverManager::iedriver, InternetExplorerDriver::new),//Cannot control driver with this webBrowser.
     EDGE(WebDriverManager::edgedriver, EdgeDriver::new),
     SAFARI(WebDriverManager::safaridriver, SafariDriver::new);
 

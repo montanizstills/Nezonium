@@ -26,17 +26,17 @@ import org.openqa.selenium.WebDriver;
 public class LoadPage_DemoSuite {
 
 
-    @UseDriver(browser = {WebBrowser.CHROME, WebBrowser.EDGE})
-    @ScreenShotOnFail(screenshotOutputDir = ScreenShotOnFail.CHROME_DIR_DEFAULT)
+    @UseDriver(browser = {WebBrowser.CHROME}) @ScreenShotOnFail(screenshotOutputDir = ScreenShotOnFail.CHROME_DIR_DEFAULT)
     public void should_Open_GoogleSearchEngine_Page(WebBrowser webBrowser) {
-        SeleniumJupiterProvider.setUp(webBrowser);
+        SeleniumJupiterProvider.setUp(webBrowser); //embed in every test, accomplishable through inheritance? looks ugly siting there.
+
         //Situation-Scenario: I open Google search page.
         //[
         //Given an url with value "{value}."
-        String url = "https://www.google.com/";
+        String url = "https://www.google.com";
 
         //When I open a webpage and navigate to the url.
-        Page myTestPage = new Page(new DriverHandler());
+        Page myTestPage = new Page();
         myTestPage.navigateTo(url);
 
         //When...
@@ -47,9 +47,6 @@ public class LoadPage_DemoSuite {
         Assertions.assertEquals(url, currentURL);
         //]
     }
-    @AfterEach
-    void stop(){
-        SeleniumJupiterProvider.getInstance().getConfig().getManager().quit();
-    } //try tear down without explicit @AfterEach
+//   @AfterEach closing driver before TestWatcher can use it.
 
 }//End MainApplication
