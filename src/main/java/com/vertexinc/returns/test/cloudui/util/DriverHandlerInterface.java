@@ -39,7 +39,6 @@ public interface DriverHandlerInterface {
         getWait().until(ExpectedConditions.visibilityOf(getElement(by)));
         getWait().until(ExpectedConditions.elementToBeClickable(by));
         getWait().until(ExpectedConditions.not(ExpectedConditions.stalenessOf(getElement(by))));
-        //  getWait().until(ExpectedConditions.visibilityOfAllElements(() -> Page.class.getMethods()));
         return new Select(getElement(by));
     }
 

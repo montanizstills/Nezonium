@@ -2,12 +2,12 @@ package com.vertexinc.returns.test.cloudui.util;
 
 public interface PageInterface {
     /**
-     * This method is used to expose the driverHandler to implementing subclasses
+     * This method is used to expose the DriverHandler to implementing subclasses
      **/
     DriverHandler getDriverHandler();
 
     /**
-     * This following - method architecture hides unneeded knowledge concerning the inner-workings of the DriverHandler from the user.
+     * This following helper methods:
      **/
 
     default String getCurrentURL() {

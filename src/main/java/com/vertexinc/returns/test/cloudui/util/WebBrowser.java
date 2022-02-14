@@ -15,10 +15,11 @@ public enum WebBrowser {
     FIREFOX(WebDriverManager::firefoxdriver, FirefoxDriver::new),
     CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
     OPERA(WebDriverManager::operadriver, OperaDriver::new),
-    @Deprecated
-    INTERNET_EXPLORER(WebDriverManager::iedriver, InternetExplorerDriver::new),//Cannot control driver with this webBrowser.
+    // TODO - Cannot control driver with this webBrowser. Hence, temporary deprecation. Recommended use: AVOID!
+    @Deprecated INTERNET_EXPLORER(WebDriverManager::iedriver, InternetExplorerDriver::new),
     EDGE(WebDriverManager::edgedriver, EdgeDriver::new),
     SAFARI(WebDriverManager::safaridriver, SafariDriver::new);
+    // TODO - mobile-OS driver.
 
     private final Supplier<WebDriver> webDriverSupplier;
     private final Supplier<WebDriverManager> webDriverManagerSupplier;
@@ -36,9 +37,5 @@ public enum WebBrowser {
         return this.webDriverSupplier;
     }
 
-    public WebDriver getInstance(){
-        getWebDriverManagerSupplier().get().setup();
-        return getWebDriverSupplier().get();
-    }
 }
 

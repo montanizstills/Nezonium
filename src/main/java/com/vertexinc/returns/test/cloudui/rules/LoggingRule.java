@@ -6,6 +6,7 @@ import org.junit.jupiter.api.TestInstance;
 
 import java.util.logging.Logger;
 
+@Deprecated
 @TestInstance(value = TestInstance.Lifecycle.PER_CLASS)
 public class LoggingRule {
     private static final Logger logger = Logger.getLogger(LoggingRule.class.getName());

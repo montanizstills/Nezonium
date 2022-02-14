@@ -14,11 +14,11 @@ import java.lang.annotation.Target;
 public @interface ScreenShotOnFail {
     String screenshotOutputDir();
 
-    String CHROME_DIR_DEFAULT = "src\\main\\java\\resources\\chrome";
-    String EDGE_DIR_DEFAULT = "\\src\\main\\java\\resources\\edge";
-    String FIREFOX_DIR_DEFAULT = "\\src\\main\\java\\resources\\firefox";
-    String INTERNET_EXPLORER_DIR_DEFAULT = "\\src\\main\\java\\resources\\internet_explorer";
-    String OPERA_DIR_DEFAULT = "\\src\\main\\java\\resources\\opera";
-    String SAFARI_DIR_DEFAULT = "\\src\\main\\java\\resources\\safari";
+    String CHROME_DIR_DEFAULT = "src/main/java/resources/chrome";
+    String EDGE_DIR_DEFAULT = "/src/main/java/resources/edge";
+    String FIREFOX_DIR_DEFAULT = "/src/main/java/resources/firefox";
+    String INTERNET_EXPLORER_DIR_DEFAULT = "/src/main/java/resources/internet_explorer";
+    String OPERA_DIR_DEFAULT = "/src/main/java/resources/opera";
+    String SAFARI_DIR_DEFAULT = "/src/main/java/resources/safari";
 
 }

@@ -7,7 +7,7 @@ public class SeleniumJupiterProvider {
     private static SeleniumJupiter selJup = new SeleniumJupiter();
 
     private SeleniumJupiterProvider() {
-    }//SINGLETON PATTERN
+    }
 
     public static SeleniumJupiter getInstance() {
         return selJup;

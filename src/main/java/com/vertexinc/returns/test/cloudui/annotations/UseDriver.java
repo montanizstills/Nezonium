@@ -18,5 +18,4 @@ import java.lang.annotation.Target;
 @ArgumentsSource(WebBrowserArgumentsProvider.class)
 public @interface UseDriver {
     WebBrowser[] browser();
-
 }
