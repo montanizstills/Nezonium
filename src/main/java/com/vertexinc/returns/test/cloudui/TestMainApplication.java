@@ -8,7 +8,6 @@ import com.vertexinc.returns.test.cloudui.util.WebBrowser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 
-
 /**
  * This framework aims adheres to the Page Object Model.
  * The following test is a demonstration. This use case draws upon the behaviour of the PageInterface. The PageInterface follows Open-Closed principle.
