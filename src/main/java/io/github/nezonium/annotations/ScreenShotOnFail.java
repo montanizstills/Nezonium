@@ -1,6 +1,6 @@
-package com.vertexinc.returns.test.cloudui.annotations;
+package io.github.nezonium.annotations;
 
-import com.vertexinc.returns.test.cloudui.util.annotationutils.ScreenShotRuleProperties;
+import io.github.nezonium.util.annotationutils.ScreenShotRuleProperties;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.annotation.ElementType;
@@ -12,8 +12,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @ExtendWith(ScreenShotRuleProperties.class)
 public @interface ScreenShotOnFail {
-    String screenshotOutputDir();
-
     String CHROME_DIR_DEFAULT = "src/main/java/resources/chrome";
     String EDGE_DIR_DEFAULT = "/src/main/java/resources/edge";
     String FIREFOX_DIR_DEFAULT = "/src/main/java/resources/firefox";

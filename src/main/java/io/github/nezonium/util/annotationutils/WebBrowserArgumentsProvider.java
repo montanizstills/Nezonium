@@ -1,8 +1,7 @@
-package com.vertexinc.returns.test.cloudui.util.annotationutils;
+package io.github.nezonium.util.annotationutils;
 
-import com.vertexinc.returns.test.cloudui.annotations.UseDriver;
-import com.vertexinc.returns.test.cloudui.util.WebBrowser;
-import io.github.bonigarcia.seljup.SeleniumJupiter;
+import io.github.nezonium.annotations.UseDriver;
+import io.github.nezonium.util.WebBrowser;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;

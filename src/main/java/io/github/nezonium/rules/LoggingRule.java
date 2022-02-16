@@ -1,4 +1,4 @@
-package com.vertexinc.returns.test.cloudui.rules;
+package io.github.nezonium.rules;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;

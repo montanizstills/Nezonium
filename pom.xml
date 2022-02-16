@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.vertexinc.returns.test.cloudui</groupId>
-    <artifactId>feat-abstraction</artifactId>
-    <version>0.0.1x</version>
+    <groupId>io.github.nezonium</groupId>
+    <artifactId>Nezonium</artifactId>
+    <version>0.0.2x</version>
     <build>
         <plugins>
             <plugin>
@@ -31,7 +31,7 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.1.1</version>
-<!--            4.1.2 not supported-->
+<!--            4.1.2 not currently supported-->
         </dependency>
 
         <dependency>

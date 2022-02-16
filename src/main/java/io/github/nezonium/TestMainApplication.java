@@ -1,16 +1,16 @@
-package com.vertexinc.returns.test.cloudui;
+package io.github.nezonium;
 
-import com.vertexinc.returns.test.cloudui.annotations.ScreenShotOnFail;
-import com.vertexinc.returns.test.cloudui.annotations.UseDriver;
-import com.vertexinc.returns.test.cloudui.util.Page;
-import com.vertexinc.returns.test.cloudui.util.SeleniumJupiterProvider;
-import com.vertexinc.returns.test.cloudui.util.WebBrowser;
+import io.github.nezonium.annotations.ScreenShotOnFail;
+import io.github.nezonium.annotations.UseDriver;
+import io.github.nezonium.util.Page;
+import io.github.nezonium.util.SeleniumJupiterProvider;
+import io.github.nezonium.util.WebBrowser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 
 /**
  * This framework aims adheres to the Page Object Model.
- * The following test is a demonstration. This use case draws upon the behaviour of the PageInterface. The PageInterface follows Open-Closed principle.
+ * The following class is a demonstration of the framework.
  * This framework observes DOM state before element interaction to abstract `test.wait()` from user focus and readjust it to building the test at hand!
  **/
 
@@ -20,7 +20,7 @@ public class TestMainApplication {
 
     //Sample Test Method
     @UseDriver(browser = {WebBrowser.EDGE})
-    @ScreenShotOnFail(screenshotOutputDir = ScreenShotOnFail.CHROME_DIR_DEFAULT)
+    @ScreenShotOnFail
     public void should_Open_GoogleSearchEngine_Page(WebBrowser webBrowser) {
         SeleniumJupiterProvider.setUp(webBrowser); //embed in every test, accomplishable through inheritance? looks ugly siting there.
 

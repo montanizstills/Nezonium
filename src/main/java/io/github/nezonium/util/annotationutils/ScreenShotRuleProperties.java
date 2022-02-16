@@ -1,6 +1,6 @@
-package com.vertexinc.returns.test.cloudui.util.annotationutils;
+package io.github.nezonium.util.annotationutils;
 
-import com.vertexinc.returns.test.cloudui.util.SeleniumJupiterProvider;
+import io.github.nezonium.util.SeleniumJupiterProvider;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 import ru.yandex.qatools.ashot.AShot;
