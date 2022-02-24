@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class ScreenShotRuleProperties implements TestWatcher {
+public class ScreenShotRulePropertiesProvider implements TestWatcher {
 
     public void takeScreenshot(ExtensionContext context) {
         Screenshot screenshot = new AShot()
