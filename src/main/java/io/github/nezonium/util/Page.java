@@ -11,6 +11,10 @@ public class Page implements PageInterface {
         this.driverHandler=driverHandler;
     }
 
+    public Page(DriverHandler driverHandler) {
+        this.driverHandler = driverHandler;
+    }
+
     @Override
     public DriverHandler getDriverHandler() {
         return this.driverHandler;
