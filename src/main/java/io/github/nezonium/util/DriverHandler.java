@@ -1,4 +1,4 @@
-package com.vertexinc.returns.test.cloudui.util;
+package io.github.nezonium.util;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;

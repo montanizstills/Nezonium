@@ -1,4 +1,4 @@
-package com.vertexinc.returns.test.cloudui.util;
+package io.github.nezonium.util;
 
 import io.github.bonigarcia.seljup.SeleniumJupiter;
 

@@ -1,7 +1,7 @@
-package com.vertexinc.returns.test.cloudui.annotations;
+package io.github.nezonium.annotations;
 
-import com.vertexinc.returns.test.cloudui.util.WebBrowser;
-import com.vertexinc.returns.test.cloudui.util.annotationutils.WebBrowserArgumentsProvider;
+import io.github.nezonium.util.WebBrowser;
+import io.github.nezonium.util.annotationutils.WebBrowserArgumentsProvider;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
