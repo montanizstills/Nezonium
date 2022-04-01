@@ -10,12 +10,17 @@ public final class DriverHandler implements DriverHandlerInterface {
 
     private WebDriver driver;
     private final FluentWait<WebDriver> waitDriver;
+    private static int timeOutWaitTimeInMillis=12000;
 
     public DriverHandler() {
         waitDriver = new FluentWait<>(getDriver())
-                .withTimeout(Duration.ofMillis(12000))
+                .withTimeout(Duration.ofMillis(timeOutWaitTimeInMillis))
                 .pollingEvery(Duration.ofMillis(250))
                 .ignoring(NoSuchElementException.class);
+    }
+
+    public static void setTimeOutWaitTimeInMillis(int timeOutWaitTime) {
+        timeOutWaitTimeInMillis = timeOutWaitTime;
     }
 
     @Override

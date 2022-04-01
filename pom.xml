@@ -31,7 +31,7 @@
     </scm>
     <groupId>io.github.montanizstills</groupId>
     <artifactId>Nezonium</artifactId>
-    <version>0.0.8x</version>
+    <version>0.0.10x</version>
 
     <!--Deployment Info-->
     <distributionManagement>
