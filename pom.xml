@@ -17,8 +17,9 @@
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
-        <leonium.version>2.5.0</leonium.version>
+        <leonium.version>2.5.1</leonium.version>
         <selenium-jupiter.version>4.0.1</selenium-jupiter.version>
+        <junit.version>5.7.0</junit.version>
 
     </properties>
 
@@ -167,7 +168,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
+            <version>${junit.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

@@ -1,6 +1,6 @@
 package io.github.nezonium.annotations;
 
-import io.github.nezonium.util.WebBrowser;
+import com.github.git_leon.leonium.browsertools.factories.BrowserHandlerFactory;
 import io.github.nezonium.util.annotationutils.WebBrowserArgumentsProvider;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
@@ -17,5 +17,5 @@ import java.lang.annotation.Target;
 @ParameterizedTest(name = "Executing with {argumentsWithNames} - {displayName}")
 @ArgumentsSource(WebBrowserArgumentsProvider.class)
 public @interface UseDriver {
-    WebBrowser[] browser();
+    BrowserHandlerFactory[] browser();
 }

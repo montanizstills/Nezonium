@@ -1,7 +1,7 @@
 package io.github.nezonium.util.annotationutils;
 
+import com.github.git_leon.leonium.browsertools.factories.BrowserHandlerFactory;
 import io.github.nezonium.annotations.UseDriver;
-import io.github.nezonium.util.WebBrowser;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class WebBrowserArgumentsProvider implements ArgumentsProvider {
-    WebBrowser[] browsers;
+    BrowserHandlerFactory[] browsers;
 
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) {
