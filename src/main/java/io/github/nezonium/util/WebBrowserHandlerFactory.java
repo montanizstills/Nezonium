@@ -20,7 +20,7 @@ import org.openqa.selenium.safari.SafariOptions;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public enum WebBrowserHandlerFactory implements BrowserHandlerFactoryInterface {
+public enum WebBrowserHandlerFactory implements WebBrowserHandlerFactoryInterface {
     CHROME(DesiredCapabilitiesFactory::getChrome,
             (caps) -> new ChromeDriver((new ChromeOptions()).merge(caps)),
             WebDriverManager.chromedriver()),
@@ -33,16 +33,16 @@ public enum WebBrowserHandlerFactory implements BrowserHandlerFactoryInterface {
     HEADLESS_FIREFOX(DesiredCapabilitiesFactory::getHeadlessFirefox,
             (caps) -> new FirefoxDriver((new FirefoxOptions()).merge(caps)),
             WebDriverManager.firefoxdriver()),
-    @Deprecated
-    INTERNET_EXPLORER(DesiredCapabilitiesFactory::getDefault,
-            (caps) -> new InternetExplorerDriver(new InternetExplorerOptions().merge(caps)),
-            WebDriverManager.iedriver()),
     EDGE(DesiredCapabilitiesFactory::getDefault,
             (caps) -> new EdgeDriver(new EdgeOptions().merge(caps)),
             WebDriverManager.edgedriver()),
     SAFARI(DesiredCapabilitiesFactory::getDefault,
             (caps) -> new SafariDriver(new SafariOptions().merge(caps)),
-            WebDriverManager.safaridriver());
+            WebDriverManager.safaridriver()),
+    @Deprecated
+    INTERNET_EXPLORER(DesiredCapabilitiesFactory::getDefault,
+            (caps) -> new InternetExplorerDriver(new InternetExplorerOptions().merge(caps)),
+            WebDriverManager.iedriver());
 
     private final Function<Capabilities, WebDriver> webDriverConstructor;
     private final Supplier<Capabilities> capabilitiesSupplier;
@@ -62,6 +62,7 @@ public enum WebBrowserHandlerFactory implements BrowserHandlerFactoryInterface {
         return this.capabilitiesSupplier;
     }
 
+    @Override
     public WebDriverManager getWebDriverManager() {
         return this.webDriverManager;
     }

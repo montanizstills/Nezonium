@@ -1,10 +1,12 @@
 package io.github.nezonium;
 
 import com.github.git_leon.leonium.browsertools.factories.BrowserHandlerFactory;
+import com.github.git_leon.leonium.browsertools.factories.BrowserHandlerFactoryInterface;
 import io.github.nezonium.annotations.ScreenShotOnFail;
 import io.github.nezonium.annotations.UseDriver;
 import io.github.nezonium.util.Page;
 import io.github.nezonium.util.SeleniumJupiterProvider;
+import io.github.nezonium.util.WebBrowserHandlerFactoryInterface;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 
@@ -21,7 +23,7 @@ public class TestMainApplication {
     //Sample Test Method
     @UseDriver(browser = {BrowserHandlerFactory.CHROME})
     @ScreenShotOnFail
-    public void should_Open_GoogleSearchEngine_Page(BrowserHandlerFactory webBrowser) {
+    public void should_Open_GoogleSearchEngine_Page(WebBrowserHandlerFactoryInterface webBrowser) {
         SeleniumJupiterProvider.setUp(webBrowser); //embed in every test, accomplishable through inheritance? looks ugly siting there.
 
         //Situation-Scenario: I open Google search page.
