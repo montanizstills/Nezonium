@@ -10,7 +10,7 @@ public final class DriverHandler implements DriverHandlerInterface {
 
     private WebDriver driver;
     private final FluentWait<WebDriver> waitDriver;
-    private static int timeOutWaitTimeInMillis=12000;
+    private static int timeOutWaitTimeInMillis = 12000;
 
     public DriverHandler() {
         waitDriver = new FluentWait<>(getDriver())
