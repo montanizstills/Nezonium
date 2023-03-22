@@ -48,6 +48,22 @@
     <!--Build-->
     <build>
         <plugins>
+            <!--            To use @ParameterizedTest in maven instead of @Test-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- or the latest version -->
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.conditions.deactivate=org.junit.*DisabledCondition
+                        </configurationParameters>
+                    </properties>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
