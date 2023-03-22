@@ -4,7 +4,7 @@ import io.github.bonigarcia.seljup.SeleniumJupiter;
 
 public class SeleniumJupiterProvider {
 
-    private static SeleniumJupiter selJup = new SeleniumJupiter();
+    private static final SeleniumJupiter selJup = new SeleniumJupiter();
 
     private SeleniumJupiterProvider() {
     }

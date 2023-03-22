@@ -13,7 +13,8 @@ import java.util.function.Supplier;
 
 public enum WebBrowser {
     FIREFOX(WebDriverManager::firefoxdriver, FirefoxDriver::new),
-    CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
+    // TODO - Investigate 'Input must be set' thrown by FluentWait API
+    @Deprecated CHROME(WebDriverManager::chromedriver, ChromeDriver::new),
     OPERA(WebDriverManager::operadriver, OperaDriver::new),
     // TODO - Cannot control driver with this webBrowser. Hence, temporary deprecation. Recommended use: AVOID!
     @Deprecated INTERNET_EXPLORER(WebDriverManager::iedriver, InternetExplorerDriver::new),

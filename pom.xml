@@ -31,7 +31,7 @@
     </scm>
     <groupId>io.github.montanizstills</groupId>
     <artifactId>Nezonium</artifactId>
-    <version>0.0.11x</version>
+    <version>0.0.02x</version>
 
     <!--Deployment Info-->
     <distributionManagement>
@@ -48,6 +48,22 @@
     <!--Build-->
     <build>
         <plugins>
+            <!--            To use @ParameterizedTest in maven instead of @Test-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- or the latest version -->
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.conditions.deactivate=org.junit.*DisabledCondition
+                        </configurationParameters>
+                    </properties>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -67,7 +83,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
@@ -105,7 +121,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
@@ -120,6 +136,12 @@
 
     <!--Dependency-->
     <dependencies>
+        <!--            Maven deploy workaround-->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.15</version> <!-- apparently this needs to be exactly this version -->
+        </dependency>
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
