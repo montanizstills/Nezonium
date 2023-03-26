@@ -4,6 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>io.github.montanizstills</groupId>
+    <artifactId>Nezonium</artifactId>
+    <version>${nezonium.version</version>
+
+    <properties>
+        <nezonium.version>0.0.15x</nezonium.version>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <junit-jupiter.version>5.9.2</junit-jupiter.version>
+        <selenium-java.version>4.8.1</selenium-java.version>
+        <ashot.version>1.5.4</ashot.version>
+        <selenium-jupiter.version>4.3.3</selenium-jupiter.version>
+        <xtream.version>1.4.20</xtream.version>
+    </properties>
+
     <!--Contributor Info-->
     <developers>
         <developer>
@@ -29,9 +45,6 @@
     <scm>
         <url>https://github.com/montanizstills/Nezonium</url>
     </scm>
-    <groupId>io.github.montanizstills</groupId>
-    <artifactId>Nezonium</artifactId>
-    <version>0.0.02x</version>
 
     <!--Deployment Info-->
     <distributionManagement>
@@ -45,14 +58,13 @@
         </repository>
     </distributionManagement>
 
-    <!--Build-->
+
     <build>
         <plugins>
-            <!--            To use @ParameterizedTest in maven instead of @Test-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version> <!-- or the latest version -->
+                <version>3.0.0-M5</version>
                 <configuration>
                     <includes>
                         <include>**/*Test.java</include>
@@ -129,49 +141,31 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
-
-    <!--Dependency-->
     <dependencies>
-        <!--            Maven deploy workaround-->
-        <dependency>
-            <groupId>com.thoughtworks.xstream</groupId>
-            <artifactId>xstream</artifactId>
-            <version>1.4.15</version> <!-- apparently this needs to be exactly this version -->
-        </dependency>
-
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>selenium-jupiter</artifactId>
-            <version>4.0.1</version>
+            <version>${selenium-jupiter.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.1</version> <!--            4.1.2 not currently supported-->
+            <version>${selenium-java.version}</version>
         </dependency>
-
         <dependency>
             <groupId>ru.yandex.qatools.ashot</groupId>
             <artifactId>ashot</artifactId>
-            <version>1.5.4</version>
+            <version>${ashot.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
+            <version>${junit-jupiter.version}</version>
         </dependency>
-
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
 
 </project>
