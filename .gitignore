@@ -1,5 +1,6 @@
 #GPG
-settings.xml
+.mvn
+
 
 #Maven
 dependency-reduced-pom.xml
