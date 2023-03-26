@@ -8,11 +8,12 @@ import java.time.Duration;
 
 public final class DriverHandler implements DriverHandlerInterface {
 
-    private WebDriver driver;
+    private final WebDriver driver;
     private final FluentWait<WebDriver> waitDriver;
     private static int timeOutWaitTimeInMillis = 12000;
 
     public DriverHandler() {
+        this.driver = SeleniumJupiterProvider.getInstance().getConfig().getManager().create();
         waitDriver = new FluentWait<>(getDriver())
                 .withTimeout(Duration.ofMillis(timeOutWaitTimeInMillis))
                 .pollingEvery(Duration.ofMillis(250))
@@ -25,9 +26,6 @@ public final class DriverHandler implements DriverHandlerInterface {
 
     @Override
     public WebDriver getDriver() {
-        if (this.driver == null) {
-            return this.driver = SeleniumJupiterProvider.getInstance().getConfig().getManager().create();
-        }
         return this.driver;
     }
 

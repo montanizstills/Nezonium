@@ -140,19 +140,19 @@
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
-            <version>1.4.15</version> <!-- apparently this needs to be exactly this version -->
+            <version>1.4.20</version> <!-- apparently this needs to be exactly this version -->
         </dependency>
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>selenium-jupiter</artifactId>
-            <version>4.0.1</version>
+            <version>4.3.3</version>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.1</version> <!--            4.1.2 not currently supported-->
+            <version>4.8.1</version> <!--            4.1.2 not currently supported-->
         </dependency>
 
         <dependency>
@@ -164,7 +164,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
+            <version>5.9.2</version>
         </dependency>
 
     </dependencies>
