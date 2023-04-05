@@ -10,7 +10,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
-
+@Deprecated
 public class ScreenShotRulePropertiesProvider implements TestWatcher {
 
     public void takeScreenshot(ExtensionContext context) {

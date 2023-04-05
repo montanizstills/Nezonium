@@ -11,6 +11,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @ExtendWith(ScreenShotRulePropertiesProvider.class)
+@Deprecated
 public @interface ScreenShotOnFail {
     String CHROME_DIR_DEFAULT = "src/main/java/resources/chrome";
     String EDGE_DIR_DEFAULT = "/src/main/java/resources/edge";
